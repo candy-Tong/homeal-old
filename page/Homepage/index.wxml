@@ -1,0 +1,42 @@
+
+<!--page/HomePage/index.wxml-->
+<view class="homepage">
+
+  <!--顶部栏-->
+  <view class="top">
+    <view class="position">
+      <view class="fa fa-map-marker position-icon"></view>
+      <view class="currentArea">{{currentArea}}</view>
+    </view>
+    <view class="search">
+      <icon type="search" size="14" class="search-icon" />
+      <view class="search-input">搜索美食</view>
+    </view>
+    <view class="message">
+      <view class="fa fa-commenting-o message-icon"></view>
+      消息
+    </view>
+  </view>
+
+  <!--图片轮播-->
+  <swiper autoplay="true" class="slider">
+    <block wx:for="{{image}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" mode="widthFix" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!--推荐-->
+  <view class="recommend-wrapper" wx:for="{{recommend}}">
+    <view class="kitchen-info">
+      <image class="avatar" src="{{item.kitchen_info.avatar}}"></image>
+      <view class="desc-wrapper">
+        <view class="kitchen-name">{{item.kitchen_info.name}}</view>
+        <view class="desc">简介:{{item.kitchen_info.desc}}</view>
+      </view>
+    </view>
+    <image class="food-image" src="{{imageItem}}" style="{{(imageIndex+1)%2==0?'margin-left:10rpx':''}}" wx:for="{{item.image}}" wx:for-item="imageItem" wx:for-index="imageIndex" mode="widthFix">{{imageIndex}}</image>
+    <view class="content">{{item.content}}</view>
+  </view>
+</view>

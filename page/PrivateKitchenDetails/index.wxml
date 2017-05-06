@@ -1,0 +1,44 @@
+
+<!--page/PrivateKitchenDetails/index.wxml-->
+<import src="page/recommend-menu/recommend.wxml" />
+<import src="page/optional-menu/optional.wxml" />
+<import src="page/rating/rating.wxml" />
+<view class="private-kitchen-detail">
+
+  <!--封面-->
+  <image class="cover" src="{{cover}}" mode="widthFix"></image>
+
+  <!--私厨信息-->
+  <view class="kitchen-info">
+    <image class="avatar" src="{{kitchen_info.avatar}}"></image>
+    <view class="desc-wrapper">
+      <view class="kitchen-name">{{kitchen_info.name}}</view>
+      <view class="desc">{{kitchen_info.desc}}</view>
+      <view class="fa fa-tag tag"></view>
+      <view class="tag tag-name" wx:for="{{kitchen_info.tag}}">{{item}}</view>
+    </view>
+    <view class="option">
+      <view class="option-chat">私聊</view>
+      <view class="option-collect">收藏</view>
+    </view>
+  </view>
+
+  <!--导航-->
+  <view class="navigate">
+    <block wx:for="{{navigate}}">
+      <view class=" navigate-item" data-index="{{index}}" catchtap="setCurrentTag">
+        <view class="item-name ">{{item.name}}</view>
+        <view class="item-num ">{{item.num}}</view>
+      </view>
+      <view class="border" wx:if="{{index!=navigate.length-1}}"></view>
+    </block>
+  </view>
+
+  <!--分割线-->
+  <view style="height:30rpx;background:#e3e8ee;width:100%;"></view>
+
+  <!--导航页面-->
+  <template is="{{currentTag}}" />
+
+
+</view>

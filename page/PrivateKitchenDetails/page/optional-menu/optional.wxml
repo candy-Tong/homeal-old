@@ -1,0 +1,4 @@
+<!--page/PrivateKitchenDetails/page/optional-menu/optional.wxml-->
+<template name="optional-menu">
+  <text>自选菜单</text>
+</template>

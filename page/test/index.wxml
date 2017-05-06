@@ -1,0 +1,10 @@
+
+<!--page/PrivateKitchenDetails/index.wxml-->
+<import src="../common/head.wxml" />
+<template is="head" data="{{desc:'私厨详情'}}" />
+<navigator url="/page/component/pages/navigator/navigator" hover-class="navigator-hover">
+  <button type="default">跳转到新页面</button>
+</navigator>
+<navigator url="/page/PrivateKitchenDetails/index" hover-class="navigator-hover">
+  <button type="default">私厨详情</button>
+</navigator>

@@ -1,0 +1,142 @@
+/* page/HomePage/index.wxss */
+
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #a91b07;
+  overflow: hidden;
+  color: white;
+  padding: 5px 0 10px 0;
+  font-size: 16px;
+}
+
+.position {
+  display: inline-block;
+  width: 150rpx;
+}
+
+.position-icon {
+  float: left;
+  margin-left: 30rpx;
+  margin-right: 10rpx;
+}
+
+.currentArea {
+  float: left;
+  text-align: center;
+}
+
+.search {
+  flex-grow: 1;
+  background: white;
+  border-radius: 40px;
+  box-shadow: 0 0 0 1px #ededed;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+}
+
+.search-icon {
+  display: inline-block;
+  line-height: 14px;
+  height: 14px;
+  vertical-align: middle;
+  margin-left: -7px;
+}
+
+.search-input {
+  line-height: 14px;
+  font-size: 14px;
+  margin-left: 10px;
+  color: gray;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.message {
+  float: right;
+  width: 150rpx;
+  text-align: center;
+}
+
+.message-icon {
+  display: inline-block;
+}
+
+.slider {
+  width: 100%;
+  height: 400rpx;
+}
+
+.slide-image {
+  width: 100%;
+}
+
+.kitchen-info {
+  position: relative;
+  overflow: hidden;
+}
+
+.recommend-wrapper {
+  width: 700rpx;
+  margin: 20rpx auto 0 auto;
+  border: 1px solid rgba(158, 167, 180, 0.3);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.recommend-wrapper:last-child {
+  margin-bottom: 20rpx;
+}
+
+.avatar {
+  float: left;
+  margin: 20rpx 40rpx 20rpx 40rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.desc-wrapper {
+  float: left;
+}
+
+.kitchen-name {
+  margin-top: 35rpx;
+  color: #464c5b;
+  font-weight: 900;
+  font-size: 35rpx;
+  line-height: 35rpx;
+}
+
+.desc {
+  display: inline-block;
+  margin-top: 10rpx;
+  font-size: 25rpx;
+  line-height: 25rpx;
+}
+
+.food-image {
+  width: 345rpx;
+}
+
+.content {
+  font-weight: 600;
+  font-size: 30rpx;
+  width: 660rpx;
+  margin: 10rpx auto 10rpx auto;
+
+}
+
+.tag {
+  display: inline-block;
+  font-size: 28rpx;
+  margin: 6rpx 0;
+  color: #f90;
+}
+
+.tag-name {
+  margin: 0 10rpx;
+  font-weight: 550;
+}

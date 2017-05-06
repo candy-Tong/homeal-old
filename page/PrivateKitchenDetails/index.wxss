@@ -1,0 +1,92 @@
+/* page/PrivateKitchenDetails/index.wxss */
+
+.cover{
+    width: 100%;
+}
+.kitchen-info{
+    position: relative;
+    overflow: hidden;
+}
+.avatar{
+    float: left;
+    margin: 20rpx 40rpx 20rpx 40rpx;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius:50%;
+}
+.desc-wrapper{
+    float: left;
+}
+.kitchen-name{
+    margin-top: 20rpx;
+    color: #464c5b;
+    font-weight: 900;
+    font-size: 40rpx;
+    line-height: 40rpx;
+}
+.desc{
+    margin-top: 10rpx;
+    font-size:30rpx;
+    line-height: 30rpx;
+}
+
+.tag{
+    display: inline-block;
+    font-size:28rpx;
+    margin: 6rpx 0;
+    color: #ff9900;
+}
+.tag-name{
+    margin: 0 10rpx;
+    font-weight: 550;
+}
+.option{
+    position: absolute;
+    font-size: 26rpx;
+    color: white;
+    right: 10rpx;
+    bottom: 10rpx;
+
+}
+.option-chat{
+    display: inline-block;
+    margin-right: 10rpx;
+    background: #ff9900;
+    padding: 5rpx 20rpx;
+    border-radius: 50% 0 40% 50%;
+}
+.option-collect{
+    display: inline-block;
+    margin-right: 10rpx;
+    background: #ff9900;
+    padding: 5rpx 20rpx;
+    border-radius: 50% 0 40% 50%;
+}
+.navigate{
+    clear: both;
+    overflow: hidden;
+    margin-top: 20rpx;
+}
+.navigate-item{
+    float: left;
+    width: 249rpx;
+    text-align: center;
+}
+.item-name{
+    font-weight: 600;
+    font-size: 30rpx;
+    line-height: 30rpx;
+    margin-bottom: 20rpx;
+}
+.item-num{
+    font-size: 24rpx;
+    line-height: 24rpx;
+    margin-bottom: 20rpx;
+}
+.border{
+    float: left;
+    width: 1rpx;
+    height: 60rpx;
+    vertical-align: middle;
+    background: black;
+}
