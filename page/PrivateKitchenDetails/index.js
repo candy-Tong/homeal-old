@@ -3,7 +3,7 @@ Page({
   data: {
     "cover": "http://img95.699pic.com/photo/00037/1338.jpg_wh300.jpg",
     "kitchen_info": {
-      "avatar": "http://candycute.cn/imooc/Yii_blog/advanced/frontend/web/static/images/avatar/small.jpg",
+      "avatar": "http://homeal.com.hk/assets/img/cook/cook_1.jpg",
       "name": "小路私房菜",
       "desc": "会做各种潮汕美食",
       "tag": [
@@ -44,6 +44,18 @@ Page({
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
+    wx.request({
+      url: 'http://homeal.com.hk/api/Cook_rest/cook?cid=1', 
+      data: {
+        cid:1
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res.data)
+      }
+    })
   },
   onReady: function () {
     // 页面渲染完成
@@ -57,4 +69,18 @@ Page({
   onUnload: function () {
     // 页面关闭
   }
+  // ,
+  // onShareAppMessage: function () {
+  //   return {
+  //     title: '自定义转发标题',
+  //     path: '/page/PrivateKitchenDetails/index',
+  //     success: function (res) {
+  //       // 转发成功
+  //       console.log(res);
+  //     },
+  //     fail: function (res) {
+  //       // 转发失败
+  //     }
+  //   }
+  // }
 })

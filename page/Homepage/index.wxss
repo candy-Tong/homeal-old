@@ -119,6 +119,7 @@
 
 .food-image {
   width: 345rpx;
+  margin-bottom: 10rpx;
 }
 
 .content {
@@ -126,7 +127,7 @@
   font-size: 30rpx;
   width: 660rpx;
   margin: 10rpx auto 10rpx auto;
-
+  clear: both;
 }
 
 .tag {

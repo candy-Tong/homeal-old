@@ -53,14 +53,14 @@
     margin-right: 10rpx;
     background: #ff9900;
     padding: 5rpx 20rpx;
-    border-radius: 50% 0 40% 50%;
+    border-radius: 26rpx 0 26rpx 26rpx;
 }
 .option-collect{
     display: inline-block;
     margin-right: 10rpx;
     background: #ff9900;
     padding: 5rpx 20rpx;
-    border-radius: 50% 0 40% 50%;
+    border-radius: 26rpx 0 26rpx 26rpx;
 }
 .navigate{
     clear: both;

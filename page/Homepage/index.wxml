@@ -36,7 +36,7 @@
         <view class="desc">简介:{{item.kitchen_info.desc}}</view>
       </view>
     </view>
-    <image class="food-image" src="{{imageItem}}" style="{{(imageIndex+1)%2==0?'margin-left:10rpx':''}}" wx:for="{{item.image}}" wx:for-item="imageItem" wx:for-index="imageIndex" mode="widthFix">{{imageIndex}}</image>
+    <image class="food-image" src="{{imageItem}}" style="{{(imageIndex+1)%2==0?'float:left':'float:right'}}" wx:for="{{item.image}}" wx:for-item="imageItem" wx:for-index="imageIndex" mode="widthFix">{{imageIndex}}</image>
     <view class="content">{{item.content}}</view>
   </view>
 </view>

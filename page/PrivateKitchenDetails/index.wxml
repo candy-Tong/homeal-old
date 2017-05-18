@@ -10,7 +10,7 @@
 
   <!--私厨信息-->
   <view class="kitchen-info">
-    <image class="avatar" src="{{kitchen_info.avatar}}"></image>
+    <image class="avatar" src="{{kitchen_info.avatar}}" mode="aspectFill"></image>
     <view class="desc-wrapper">
       <view class="kitchen-name">{{kitchen_info.name}}</view>
       <view class="desc">{{kitchen_info.desc}}</view>

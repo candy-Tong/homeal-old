@@ -1,0 +1,59 @@
+/* page/LoginPage/index.wxss */
+
+.Login-page {
+  background-image: url("http://candytong.xyz/homeal/Group.png");
+  width: 100%;
+  height: 100%;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.name {
+  color: white;
+  padding-top: 65px;
+  text-align: center;
+  font-size: 48px;
+  font-family: 'Brush Script Std';
+}
+
+.phone{
+  margin:17px 64px 0 64px;
+  color: white;
+  opacity: 0.87;
+  font-size: 14px;
+  border-bottom: 1px solid white;
+}
+.verification{
+  margin:17px 64px 0 64px;
+  color: white;
+  opacity: 0.87;
+  font-size: 14px;
+  border-bottom: 1px solid white;
+}
+.user-input{
+  position: relative;
+}
+.get-verification{
+  position: absolute;
+  display: inline-block;
+  height: 22px;
+  right: 64px;
+  bottom: 0px;
+  font-size: 10px;
+}
+
+.submit{
+  margin-top: 42px;
+  width: 236px;
+  height: 40px;
+  background: #ffb300;
+  border-radius: 100px;
+  font-size: 16px;
+  color: white;
+}
