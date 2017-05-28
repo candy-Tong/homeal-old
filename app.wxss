@@ -1,7 +1,147 @@
 /* reset */
 
+.chat-icon {
+  display: block;
+  margin: 0 auto;
+  width: 22px;
+  height: 19px;
+  background-image: url("http://candytong.xyz/homeal/icon/chat_icon@2x.png.png");
+  background-repeat: no-repeat;
+   background-size: 100%;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 3.0),
+       screen and (min--moz-device-pixel-ratio: 3.0),
+       screen and (min-device-pixel-ratio: 3.0),
+       screen and (min-resolution: 3.0dppx) {
+  .chat-icon {
+    background-image: url("http://candytong.xyz/homeal/icon/chat_icon@3x.png.png");
+  }
+}
+
+.favor-icon {
+  display: block;
+  margin: 0 auto;
+  width: 20px;
+  height: 19px;
+  background-image: url("http://candytong.xyz/homeal/icon/favor_icon@2x.png.png");
+  background-repeat: no-repeat;
+   background-size: 100%;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 3.0),
+       screen and (min--moz-device-pixel-ratio: 3.0),
+       screen and (min-device-pixel-ratio: 3.0),
+       screen and (min-resolution: 3.0dppx) {
+  .favor-icon {
+    background-image: url("http://candytong.xyz/homeal/icon/favor_icon@3x.png.png");
+  }
+}
+
+.wechat {
+  display: block;
+  margin: 0 auto;
+  margin-top: 12px;
+  width: 36px;
+  height: 36px;
+  background-image: url("http://candytong.xyz/homeal/login/WeChat@2x.png.png");
+  background-repeat: no-repeat;
+   background-size: 100%;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 3.0),
+       screen and (min--moz-device-pixel-ratio: 3.0),
+       screen and (min-device-pixel-ratio: 3.0),
+       screen and (min-resolution: 3.0dppx) {
+  .wechat {
+    background-image: url("http://candytong.xyz/homeal/login/WeChat@3x.png.png");
+  }
+}
+
+.position-icon {
+  float: left;
+  margin-left: 9px;
+  margin-right: 2px;
+  width: 17px;
+  height: 27px;
+  background-image: url("http://candytong.xyz/homeal/home/location_pin@2x.png.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  line-height: 27px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 3.0),
+       screen and (min--moz-device-pixel-ratio: 3.0),
+       screen and (min-device-pixel-ratio: 3.0),
+       screen and (min-resolution: 3.0dppx) {
+  .position-icon {
+    background-image: url("http://candytong.xyz/homeal/home/location_pin@3x.png.png");
+  }
+}
+
+.message-icon {
+  width: 30px;
+  height: 27px;
+  line-height: 27px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-image: url("http://candytong.xyz/homeal/home/message_icon@2x.png.png");
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 3.0),
+       screen and (min--moz-device-pixel-ratio: 3.0),
+       screen and (min-device-pixel-ratio: 3.0),
+       screen and (min-resolution: 3.0dppx) {
+  .message-icon {
+    background-image: url("http://candytong.xyz/homeal/home/message_icon@3x.png.png");
+  }
+}
+
+.show-more-icon {
+  display: inline-block;
+  width: 6px;
+  height: 9px;
+  line-height: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-image: url("http://candytong.xyz/homeal/home/more_icon_right@2x.png.png");
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 3.0),
+       screen and (min--moz-device-pixel-ratio: 3.0),
+       screen and (min-device-pixel-ratio: 3.0),
+       screen and (min-resolution: 3.0dppx) {
+  .show-more-icon {
+    background-image: url("http://candytong.xyz/homeal/home/more_icon_right@3x.png.png");
+  }
+}
+
+.tag-icon {
+  float: left;
+  width: 13px;
+  height: 12px;
+  line-height: 12px;
+  margin-right:6px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-image: url("http://candytong.xyz/homeal/home/tag_icon@2x.png.png");
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 3.0),
+       screen and (min--moz-device-pixel-ratio: 3.0),
+       screen and (min-device-pixel-ratio: 3.0),
+       screen and (min-resolution: 3.0dppx) {
+  .show-more-icon {
+    background-image: url("http://candytong.xyz/homeal/home/tag_icon@3x.png.png");
+  }
+}
+
 page {
-  background-color: #f8f8f8;
+  background-color: #ffffff;
   height: 100%;
   font-size: 32rpx;
   line-height: 1.6;

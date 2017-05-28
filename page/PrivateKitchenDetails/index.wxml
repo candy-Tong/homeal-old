@@ -8,7 +8,7 @@
   <swiper autoplay="true" class="banner" indicator-dots="true" indicator-color="rgba(255,255,255,0.5)" indicator-active-color="#fff">
     <block wx:for="{{chef_detail.menus[0].dishes}}" wx:key="{{index}}">
       <swiper-item>
-        <image src="{{item.dish_photo_url}}" class="banner-image" mode="aspectFill" />
+        <image src="{{item.dish_photo_url}}" class="banner-image" mode="widthFix" />
       </swiper-item>
     </block>
   </swiper>
@@ -22,13 +22,17 @@
     <view class="info-wrapper">
 
       <!--私厨名称-->
-      <view class="kitchen_name">
-        {{chef_detail.kitchen_name}}
-      </view>
-      <!--选项-->
-      <view class="option">
-        <view class="option-chat">收藏</view>
-        <view class="option-collect">私信</view>
+      <view style="overflow:hidden;">
+        <view class="kitchen_name">
+          {{chef_detail.kitchen_name}}
+        </view>
+        <!--选项-->
+        <view class="option">
+          <view class="option-chat">私信</view>
+          <view class="chat-icon"></view>
+          <view class="option-favor">收藏</view>
+          <view class="favor-icon"></view>
+        </view>
       </view>
       <!--简介-->
       <view class="chef_brief">
@@ -45,24 +49,63 @@
   </view>
 
 
-
-
-
-
   <!--导航-->
   <view class="navigate">
-
-    <view class="menus">套餐</view>
-
-    <view class="info">信息</view>
-
-    <view class="comment">用户评价</view>
-
+    <block wx:for="{{tabs}}" wx:key="*this">
+      <view id="{{index}}" class="nav-item {{activeIndex == index ? 'nav-item_on' : ''}}" bindtap="tabClick">
+        {{item}}
+      </view>
+    </block>
+    <view class="navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
   </view>
 
 
   <!--导航页面-->
-  <template is="{{currentTag}}" />
+
+  <!--套餐-->
+  <view class="nav-panel">
+    <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+
+      <!--单个套餐-->
+      <view class="menu" wx:for="{{chef_detail.menus}}" wx:key="*this">
+
+        <!--套餐序号-->
+        <view class="index-wrapper">
+          <view class="line"></view>
+          <view class="menu_index">套餐{{index+1}}</view>
+          <view class="line"></view>
+        </view>
+
+        <image src="{{item.menu_photo_url}}" mode="aspectFill" class="menu-image"></image>
+
+        <!--套餐名-->
+        <view class="menu_name">{{item.menu_name}}</view>
+        <view class="price">
+          ￥{{item.menu_price[0].cost}}-{{item.menu_price[item.menu_price.length-1].cost}}
+        </view>
+
+<!--简介-->
+        <view class="menu_desc">
+          <text style="font-size:14px;font-weight:700;">简介:</text>
+          {{item.menu_desc}}
+        </view>
+
+<!--适合人数-->
+        <view class="person_num">
+          <text style="font-size:14px;font-weight:700;">适合人数:</text>
+          {{item.min_people}}-{{item.max_people}}
+        </view>
+
+      </view>
+
+    </view>
+
+    <!--信息-->
+    <view class="nav-panel" hidden="{{activeIndex != 1}}">选项二的内容</view>
+
+    <!--用户评价-->
+    <view class="nav-panel" hidden="{{activeIndex != 2}}">选项三的内容</view>
+  </view>
 
 
 </view>

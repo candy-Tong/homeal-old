@@ -1,5 +1,8 @@
 /* page/HomePage/index.wxss */
 
+page{
+  background-color: #f8f8f8;
+}
 .top {
   display: flex;
   justify-content: center;
