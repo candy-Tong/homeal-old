@@ -1,28 +1,20 @@
 {
   "pages": [
-    "page/LoginPage/index",
-   "page/Homepage/index",
-
     "page/PrivateKitchenDetails/index",
-"page/PrivateKitchenDetails/page/recommend-menu/recommend",
-"page/PrivateKitchenDetails/page/optional-menu/optional",
-"page/PrivateKitchenDetails/page/rating/rating",
-
+    "page/HomePage/index",
+    "page/LoginPage/index",
     
-
-    "page/test/index",
     
-
+    "page/PrivateKitchenDetails/page/recommend-menu/recommend",
+    "page/PrivateKitchenDetails/page/optional-menu/optional",
+    "page/PrivateKitchenDetails/page/rating/rating",
     "page/component/index",
-    
     "page/component/pages/view/view",
     "page/component/pages/scroll-view/scroll-view",
     "page/component/pages/swiper/swiper",
-
     "page/component/pages/text/text",
     "page/component/pages/icon/icon",
     "page/component/pages/progress/progress",
-
     "page/component/pages/button/button",
     "page/component/pages/checkbox/checkbox",
     "page/component/pages/form/form",
@@ -33,17 +25,13 @@
     "page/component/pages/slider/slider",
     "page/component/pages/switch/switch",
     "page/component/pages/textarea/textarea",
-
     "page/component/pages/navigator/navigator",
     "page/component/pages/navigator/navigate",
     "page/component/pages/navigator/redirect",
-
     "page/component/pages/image/image",
     "page/component/pages/audio/audio",
     "page/component/pages/video/video",
-
     "page/component/pages/map/map",
-
     "page/component/pages/canvas/canvas"
   ],
   "window": {
@@ -52,19 +40,17 @@
     "navigationBarBackgroundColor": "#a91b07",
     "backgroundColor": "#f5f7f9",
     "backgroundTextStyle": "light"
-
-
   },
   "tabBar": {
     "color": "#7A7E83",
-    "selectedColor": "#3cc51f",
+    "selectedColor": "#B0120A",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [
       {
         "pagePath": "page/HomePage/index",
-        "iconPath": "image/icon_component.png",
-        "selectedIconPath": "image/icon_component_HL.png",
+        "iconPath": "image/icon_home.png",
+        "selectedIconPath": "image/icon_home_HL.png",
         "text": "首页"
       },
       {

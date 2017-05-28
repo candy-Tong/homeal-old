@@ -1,92 +1,83 @@
 /* page/PrivateKitchenDetails/index.wxss */
 
-.cover{
-    width: 100%;
-}
-.kitchen-info{
-    position: relative;
-    overflow: hidden;
-}
-.avatar{
-    float: left;
-    margin: 20rpx 40rpx 20rpx 40rpx;
-    width: 120rpx;
-    height: 120rpx;
-    border-radius:50%;
-}
-.desc-wrapper{
-    float: left;
-}
-.kitchen-name{
-    margin-top: 20rpx;
-    color: #464c5b;
-    font-weight: 900;
-    font-size: 40rpx;
-    line-height: 40rpx;
-}
-.desc{
-    margin-top: 10rpx;
-    font-size:30rpx;
-    line-height: 30rpx;
+/*图片轮播*/
+
+.banner {
+  width: 750rpx;
+  height: 340rpx;
 }
 
-.tag{
-    display: inline-block;
-    font-size:28rpx;
-    margin: 6rpx 0;
-    color: #ff9900;
+.banner-image {
+  width: 750rpx;
 }
-.tag-name{
-    margin: 0 10rpx;
-    font-weight: 550;
-}
-.option{
-    position: absolute;
-    font-size: 26rpx;
-    color: white;
-    right: 10rpx;
-    bottom: 10rpx;
 
+.kitchen-info {
+  position: relative;
+  overflow: hidden;
+  margin-top: 18px;
+  margin-bottom: 24px;
 }
-.option-chat{
-    display: inline-block;
-    margin-right: 10rpx;
-    background: #ff9900;
-    padding: 5rpx 20rpx;
-    border-radius: 26rpx 0 26rpx 26rpx;
+
+.avatar {
+  float: left;
+  margin: 0 15px 0 15px;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
 }
-.option-collect{
-    display: inline-block;
-    margin-right: 10rpx;
-    background: #ff9900;
-    padding: 5rpx 20rpx;
-    border-radius: 26rpx 0 26rpx 26rpx;
+
+.info-wrapper {
+  margin-left: 90px;
 }
-.navigate{
-    clear: both;
-    overflow: hidden;
-    margin-top: 20rpx;
+
+.kitchen_name {
+  float: left;
+  color: #000;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 24px;
 }
-.navigate-item{
-    float: left;
-    width: 249rpx;
-    text-align: center;
+
+.option {
+  float: right;
+  font-size: 15px;
+  color: rgba(140, 140, 140, 1);
+  overflow: hidden;
 }
-.item-name{
-    font-weight: 600;
-    font-size: 30rpx;
-    line-height: 30rpx;
-    margin-bottom: 20rpx;
+
+.option-collect {
+  float: right;
 }
-.item-num{
-    font-size: 24rpx;
-    line-height: 24rpx;
-    margin-bottom: 20rpx;
+
+.option-chat {
+  float: right;
 }
-.border{
-    float: left;
-    width: 1rpx;
-    height: 60rpx;
-    vertical-align: middle;
-    background: black;
+
+.chef_brief {
+  margin-top: 10px;
+  margin-bottom: 6px;
+  color: rgba(17, 17, 17, 1);
+  font-size: 16px;
+  line-height: 16px;
+  clear: both;
+  display: inline-block;
+  font-weight: 500;
 }
+
+.tag {
+  font-size: 15px;
+  color: rgba(232, 78, 64, 1);
+  line-height: 15px;
+}
+
+.tag-icon {
+  height: 15px;
+  line-height: 15px;
+}
+
+.navigate {
+  clear: both;
+  overflow: hidden;
+  margin-top: 20rpx;
+}
+

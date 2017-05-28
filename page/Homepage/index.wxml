@@ -1,42 +1,72 @@
-
 <!--page/HomePage/index.wxml-->
 <view class="homepage">
 
   <!--顶部栏-->
   <view class="top">
     <view class="position">
-      <view class="fa fa-map-marker position-icon"></view>
+      <view class="position-icon"></view>
       <view class="currentArea">{{currentArea}}</view>
     </view>
     <view class="search">
       <icon type="search" size="14" class="search-icon" />
-      <view class="search-input">搜索美食</view>
     </view>
     <view class="message">
-      <view class="fa fa-commenting-o message-icon"></view>
-      消息
+      <view class="message-icon"></view>
     </view>
   </view>
 
   <!--图片轮播-->
-  <swiper autoplay="true" class="slider">
-    <block wx:for="{{image}}">
+  <swiper autoplay="true" class="banner" indicator-dots="true" indicator-color="rgba(255,255,255,0.5)" indicator-active-color="#fff">
+    <block wx:for="{{banner}}" wx:key="{{index}}">
       <swiper-item>
-        <image src="{{item}}" class="slide-image" mode="widthFix" />
+        <image src="{{item.photo_url}}" class="banner-image" mode="widthFix" />
       </swiper-item>
     </block>
   </swiper>
 
-  <!--推荐-->
-  <view class="recommend-wrapper" wx:for="{{recommend}}">
+  <!-- chefs -->
+  <view class="main_rest-wrapper" wx:for="{{main_rest}}" wx:key="{{index}}">
     <view class="kitchen-info">
-      <image class="avatar" src="{{item.kitchen_info.avatar}}"></image>
-      <view class="desc-wrapper">
-        <view class="kitchen-name">{{item.kitchen_info.name}}</view>
-        <view class="desc">简介:{{item.kitchen_info.desc}}</view>
+
+      <!--头像-->
+      <image class="chef_avatar " src="{{item.chef_avatar_url}} " mode="aspectFill"></image>
+
+      <!--查看全部-->
+      <view class="show-more">查看全部
+        <view class="show-more-icon"></view>
       </view>
+
+      <view class="info-wrapper ">
+
+        <!--kitchen-name-->
+        <view class="kitchen_name ">
+          {{item.kitchen_name}}
+        </view>
+
+        <!--简介-->
+        <view class="chef_brief ">
+          简介: {{item.chef_brief}}
+        </view>
+
+      </view>
+
+
+
+
     </view>
-    <image class="food-image" src="{{imageItem}}" style="{{(imageIndex+1)%2==0?'float:left':'float:right'}}" wx:for="{{item.image}}" wx:for-item="imageItem" wx:for-index="imageIndex" mode="widthFix">{{imageIndex}}</image>
-    <view class="content">{{item.content}}</view>
+
+    <view class="image-wrapper">
+      <image class="dish-image " src="{{imageItem}} " style="{{image_index%2==0? 'float:left': 'float:right'}} " wx:for="{{item.menu.dishes}}" wx:for-item="imageItem" wx:for-index="image_index" mode="aspectFill" wx:key="{{image_index}} ">{{image_index}}</image>
+    </view>
+
+
+    <!--内容-->
+    <view class="content ">{{item.menu.menu_desc}}</view>
+
+    <!--标签-->
+    <view class="tag">
+      <view class="tag-icon"></view>
+      {{item.chef_tag}}
+    </view>
   </view>
 </view>

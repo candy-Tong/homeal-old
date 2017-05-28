@@ -1,6 +1,8 @@
 // page/PrivateKitchenDetails/index.js
+var TD = require('../../utils/tdweapp');
 Page({
   data: {
+    chef_detail:{},
     "cover": "http://img95.699pic.com/photo/00037/1338.jpg_wh300.jpg",
     "kitchen_info": {
       "avatar": "http://homeal.com.hk/assets/img/cook/cook_1.jpg",
@@ -44,16 +46,20 @@ Page({
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
+    let _this=this;
     wx.request({
-      url: 'http://homeal.com.hk/api/Cook_rest/cook?cid=1', 
+      url: 'http://homeal.com.hk/api/chefdetails_rest/chef',
       data: {
-        cid:1
+        chef_id:1
       },
       header: {
         'content-type': 'application/json'
       },
       success: function (res) {
-        console.log(res.data)
+        console.log(res.data.result);
+        _this.setData({
+          chef_detail: res.data.result
+        });
       }
     })
   },
@@ -62,6 +68,8 @@ Page({
   },
   onShow: function () {
     // 页面显示
+    TD.Page.load(true); // 此时，需要在TD.Page.load()中设置参数true，用于说明此时为Tabs方式；
+
   },
   onHide: function () {
     // 页面隐藏

@@ -1,7 +1,9 @@
 /* page/LoginPage/index.wxss */
 
 .Login-page {
-  background-image: url("http://candytong.xyz/homeal/Group.png");
+  background-image: url("http://candytong.xyz/homeal/login/Group.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
 }
@@ -22,34 +24,53 @@
   font-family: 'Brush Script Std';
 }
 
-.phone{
-  margin:17px 64px 0 64px;
+.phone {
+  margin: 17px 125rpx 0 125rpx;
   color: white;
   opacity: 0.87;
   font-size: 14px;
   border-bottom: 1px solid white;
 }
-.verification{
-  margin:17px 64px 0 64px;
+
+.verification {
+  margin: 17px 125rpx 0 125rpx;
   color: white;
   opacity: 0.87;
   font-size: 14px;
   border-bottom: 1px solid white;
 }
-.user-input{
+
+.user-input {
   position: relative;
 }
-.get-verification{
+
+.get-verification {
   position: absolute;
   display: inline-block;
   height: 22px;
-  right: 64px;
+  right: 125rpx;
   bottom: 0px;
   font-size: 10px;
+  line-height: 22px;
 }
 
-.submit{
-  margin-top: 42px;
+.ready{
+  background-color: #8dc81b
+}
+
+.error{
+  color: #ff2400;
+}
+
+.errorMsg{
+  margin: 14px 125rpx 14px 125rpx;
+  color: #ff2400;
+  font-size: 14px;
+  line-height: 14px;
+  height:14px;
+}
+
+.submit {
   width: 236px;
   height: 40px;
   background: #ffb300;
@@ -57,3 +78,23 @@
   font-size: 16px;
   color: white;
 }
+
+.tip {
+  display: block;
+  color: #fff;
+  font-size: 8px;
+  opacity: 0.54;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.other-login {
+  display: block;
+  color: #fff;
+  font-size: 8px;
+  opacity: 0.87;
+  text-align: center;
+  margin-top: 60px;
+}
+
+

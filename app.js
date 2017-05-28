@@ -1,8 +1,36 @@
-const openIdUrl = require('./config').openIdUrl
+const openIdUrl = require('./config').openIdUrl;
 
 App({
   onLaunch: function () {
     console.log('App Launch');
+
+    //接入talking Data 统计
+    var TD = require('./utils/tdweapp');
+    App({
+      onLaunch: function () {
+        TD.launch({
+          appkey: 'AC5DEE68927042629912D3D363653FF6',
+          appName: 'homeal',
+          versionName: '1.0',
+          versionCode: '1.0',
+          autoOnAppShow: true,
+          autoOnAppHide: true,
+          autoOnPageUnload: true,
+          autoOnPullDownRefresh: true,
+          autoOnReachBottom: true,
+          autoOnShare: true
+        });
+        // versionName为小程序的用户可见版本号；versionCode为小程序的内部版本号，便于版本管理
+      },
+      onShow: function () {
+        // TD.show();  // 如果上面的参数  autoOnAppShow 设置为 false，需要添加此行
+      },
+      onHide: function () {
+        // TD.hide();  // 如果上面的参数  autoOnAppHide 设置为 false，需要添加此行
+      }
+    });
+
+
     // wx.login({
     //   success: function (res) {
     //     wx.getUserInfo({
