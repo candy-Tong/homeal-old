@@ -1,5 +1,7 @@
 {
   "pages": [
+
+    "page/OrderPage/index",
     "page/PrivateKitchenDetails/index",
     "page/HomePage/index",
     "page/LoginPage/index",
@@ -55,14 +57,14 @@
       },
       {
         "pagePath": "page/PrivateKitchenDetails/index",
-        "iconPath": "image/icon_API.png",
-        "selectedIconPath": "image/icon_API_HL.png",
+        "iconPath": "image/icon_order.png",
+        "selectedIconPath": "image/icon_order_HL.png",
         "text": "订单"
       },
       {
         "pagePath": "page/component/index",
-        "iconPath": "image/icon_API.png",
-        "selectedIconPath": "image/icon_API_HL.png",
+        "iconPath": "image/icon_me.png",
+        "selectedIconPath": "image/icon_me.png",
         "text": "组件"
       }
     ]

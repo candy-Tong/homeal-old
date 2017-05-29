@@ -5,7 +5,6 @@ Page({
     tabs: ["套餐", "信息", "用户评价"],
     activeIndex: 0,
     sliderOffset: 0,
-    sliderLeft: 0,
     chef_detail: {},
   },
 

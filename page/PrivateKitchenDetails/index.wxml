@@ -56,7 +56,7 @@
         {{item}}
       </view>
     </block>
-    <view class="navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+    <view class="navbar__slider" style="transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
   </view>
 
 
@@ -84,13 +84,13 @@
           ￥{{item.menu_price[0].cost}}-{{item.menu_price[item.menu_price.length-1].cost}}
         </view>
 
-<!--简介-->
+        <!--简介-->
         <view class="menu_desc">
           <text style="font-size:14px;font-weight:700;">简介:</text>
           {{item.menu_desc}}
         </view>
 
-<!--适合人数-->
+        <!--适合人数-->
         <view class="person_num">
           <text style="font-size:14px;font-weight:700;">适合人数:</text>
           {{item.min_people}}-{{item.max_people}}

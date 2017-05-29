@@ -124,6 +124,7 @@
 
 .nav-panel{
   margin: 0 16px;
+  -webkit-overflow-scrolling: touch;
 }
 
 .menu{

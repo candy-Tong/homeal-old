@@ -1,0 +1,167 @@
+/* page/OrderPage/index.wxss */
+
+page {
+  background-color: rgba(240, 240, 240, 1);
+}
+
+/*导航*/
+
+.navbar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 10px;
+  box-shadow: 0 3px 6px 0 rgba(230, 230, 230, 1);
+}
+
+.border {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+  filter: blur(0.5px);
+}
+
+.navbar-item {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  text-align: center;
+  padding: 15px;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(128, 132, 143, 1);
+}
+
+.navbar-item_on {
+  color: rgba(176, 18, 10, 1);
+}
+
+.weui-navbar__slider {
+  position: absolute;
+  content: " ";
+  left: 0;
+  bottom: 0;
+  width: 250rpx;
+  height: 3px;
+  background-color: rgba(176, 18, 10, 1);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.order__panel {
+  box-sizing: border-box;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/*评论*/
+
+.order {
+  margin: 17px 40rpx 10px 40rpx;
+  background-color: #fff;
+  border: 1px solid white;
+  border-radius: 6px;
+  box-shadow: 3px 3px 6px 0 rgba(230, 230, 230, 1);
+  /*border-top: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  border-left: 1px solid #CCC;
+  border-right: 1px solid #CCC;*/
+}
+
+.avatar {
+  float: left;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin-left: 12px;
+  margin-top: 12px;
+}
+
+.info-wrapper {
+  position: relative;
+  margin-left: 74px;
+}
+
+.status {
+  position: absolute;
+  right: 10px;
+  top: 9px;
+  color: rgba(255, 179, 0, 1);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.chef-name {
+  padding-top: 27px;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 17px;
+}
+
+.order-time {
+  margin-top: 27rpx;
+}
+
+.order-time, .menu, .person_num, .note {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.note {
+  padding-bottom: 26rpx;
+  margin-left: -2px;
+  padding-left: 2px;
+  border-bottom: 1px solid #ccc;
+}
+
+.option {
+  display: flex;
+  margin: 28rpx 0;
+  font-size: 10px;
+  font-weight: 500;
+  color: rgb(176, 18, 10);
+  margin-left: -2px;
+}
+
+.cancel-order {
+  width: 65px;
+  height: 23px;
+  line-height: 25px;
+  text-align: center;
+  border: 1px solid rgb(176, 18, 10);
+  border-radius: 23px;
+  margin-right: 46rpx;
+}
+
+.contact-chef {
+  width: 65px;
+  height: 23px;
+  line-height: 25px;
+  text-align: center;
+  border: 1px solid rgb(176, 18, 10);
+  border-radius: 23px;
+  margin-right: 40rpx;
+}
+
+.pay {
+  width: 65px;
+  height: 23px;
+  line-height: 25px;
+  text-align: center;
+  border: 1px solid rgb(176, 18, 10);
+  border-radius: 23px;
+  color: white;
+  background-color: rgb(176, 18, 10);
+  margin-right: 38rpx;
+}
