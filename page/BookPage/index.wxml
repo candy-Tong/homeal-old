@@ -1,0 +1,49 @@
+<!--page/BookPage/index.wxml-->
+
+<view class="chef-info">
+  <image src="{{chef.avatar}}" mode="aspectFill" class="avatar"></image>
+  <text class="chef-name">{{chef.chef_name}}</text>
+</view>
+
+<!--套餐-->
+<view class="line-item">
+  <view class="icon-menu"></view>
+  <view class="line-text">套餐:
+    <text class="content">套餐一</text>
+  </view>
+  <view class="icon-right"></view>
+</view>
+
+<!--日期-->
+<view class="line-item">
+  <view class="icon-date"></view>
+  <view class="line-text">
+    日期:
+    <text class="content">2017 / 5 / 2</text>
+    <text class="content">中午12:00</text>
+  </view>
+  <view class="icon-right"></view>
+</view>
+
+<!--人数-->
+<view class="line-item">
+  <view class="icon-person"></view>
+  <view class="line-text">
+    人数:
+    <text class="content">2人</text>
+  </view>
+  <view class="icon-add"></view>
+  <view class="icon-dec"></view>
+</view>
+
+<view class="line-item price-wrapper">
+  <view class="price">
+    总价:
+  </view>
+  <text class="pay">￥168</text>
+</view>
+
+<view class="note">备注</view>
+<textarea class="note-content" placeholder="（如果您有其他的要求，可以通过备注告知私厨，最多50字符）" placeholder-style="color: rgba(172, 172, 172, 1);" />
+
+<view class="footer">提交订单</view>

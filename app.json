@@ -1,6 +1,6 @@
 {
   "pages": [
-
+    "page/BookPage/index",
     "page/OrderPage/index",
     "page/PrivateKitchenDetails/index",
     "page/HomePage/index",
