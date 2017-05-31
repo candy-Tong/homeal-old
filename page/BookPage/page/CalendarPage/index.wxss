@@ -1,0 +1,79 @@
+/*pages/calendar/calendar.wxss */
+
+.header {
+  position: relative;
+  padding: 20px;
+}
+
+.cur-date {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  height: 16px;
+}
+
+.prev {
+  position: absolute;
+  left: 62rpx;
+  bottom: 4px;
+  padding: 20px;
+}
+
+.next {
+  position: absolute;
+  right: 62rpx;
+  bottom: 4px;
+  padding: 20px;
+}
+
+.prev-hidden {
+  visibility: hidden;
+}
+
+.calendar-box {
+  font-weight: 500;
+}
+
+.calendar-line {
+  display: flex;
+}
+
+.calendar-cell {
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+}
+
+.week-name {
+  flex: 1;
+  text-align: center;
+  font-size: 12px;
+  line-height: 12px;
+  margin-bottom: 4px;
+}
+
+.day-line {
+  height: 48px;
+  line-height: 48px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.disable {
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.cell{
+  display: inline-block;
+  vertical-align: middle;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+}
+
+.selected{
+  color: #fff;
+  border-radius: 34px;
+  background-color: rgba(214, 33, 33, 1);
+}
+

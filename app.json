@@ -1,12 +1,13 @@
 {
   "pages": [
+    "page/ShowPage/index",
+    "page/HomePage/index",
+    
+    "page/BookPage/page/CalendarPage/index",
     "page/BookPage/index",
     "page/OrderPage/index",
     "page/PrivateKitchenDetails/index",
-    "page/HomePage/index",
     "page/LoginPage/index",
-    
-    
     "page/PrivateKitchenDetails/page/recommend-menu/recommend",
     "page/PrivateKitchenDetails/page/optional-menu/optional",
     "page/PrivateKitchenDetails/page/rating/rating",
@@ -56,16 +57,16 @@
         "text": "首页"
       },
       {
-        "pagePath": "page/PrivateKitchenDetails/index",
+        "pagePath": "page/OrderPage/index",
         "iconPath": "image/icon_order.png",
         "selectedIconPath": "image/icon_order_HL.png",
         "text": "订单"
       },
       {
-        "pagePath": "page/component/index",
+        "pagePath": "page/ShowPage/index",
         "iconPath": "image/icon_me.png",
         "selectedIconPath": "image/icon_me.png",
-        "text": "组件"
+        "text": "其他"
       }
     ]
   },

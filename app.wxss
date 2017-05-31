@@ -1,5 +1,43 @@
 /* reset */
 
+.icon-prev {
+  display: block;
+  margin: 0 auto;
+  width: 8px;
+  height: 13px;
+  background-image: url("http://candytong.xyz/homeal/icon/icon_left2@2x.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 3.0),
+       screen and (min--moz-device-pixel-ratio: 3.0),
+       screen and (min-device-pixel-ratio: 3.0),
+       screen and (min-resolution: 3.0dppx) {
+  .icon-prev {
+    background-image: url("http://candytong.xyz/homeal/icon/icon_left2@3x.png");
+  }
+}
+
+.icon-next {
+  display: block;
+  margin: 0 auto;
+  width: 8px;
+  height: 13px;
+  background-image: url("http://candytong.xyz/homeal/icon/icon_right2@2x.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 3.0),
+       screen and (min--moz-device-pixel-ratio: 3.0),
+       screen and (min-device-pixel-ratio: 3.0),
+       screen and (min-resolution: 3.0dppx) {
+  .icon-next {
+    background-image: url("http://candytong.xyz/homeal/icon/icon_right2@3x.png");
+  }
+}
+
 .icon-add {
   display: block;
   margin: 0 auto;

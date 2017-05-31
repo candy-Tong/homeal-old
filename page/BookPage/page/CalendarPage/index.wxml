@@ -1,0 +1,31 @@
+<!--顶部日期-->
+<view class="header">
+  <view class=" prev {{!pre_button_show?'prev-hidden':''}}" bindtap="handleCalendar" data-handle="prev">
+    <view class="icon-prev"></view>
+  </view>
+
+  <view class="cur-date">{{cur_year || "--"}} 年 {{cur_month || "--"}} 月</view>
+  <view class=" next" bindtap="handleCalendar" data-handle="next">
+    <view class="icon-next"></view>
+  </view>
+</view>
+
+
+<view class="calendar-box">
+
+  <view class="calendar-line week-name">
+    <view class="calendar-cell" wx:for="{{weeks_ch}}" wx:key="*this">
+      {{item}}
+    </view>
+  </view>
+
+  <!--日*-->
+  <view class="calendar-line day-line" wx:for="{{days}}" wx:for-index="line_index" wx:for-item="line_item" wx:key="*this">
+    <view id="{{item}}" class="calendar-cell day {{item>=13&&item<22?'disable':''}}"  wx:for="{{line_item}}" wx:key="*this" bindtap="selectDate">
+      <view class="cell {{item==selected&&selected!==0?'selected':''}}">
+        {{item===0?'':item}}
+      </view>
+    </view>
+  </view>
+
+</view>

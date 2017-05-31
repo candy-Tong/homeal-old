@@ -1,0 +1,16 @@
+<!--page/ShowPage/index.wxml-->
+<text>页面展示</text>
+
+<navigator url="/page/HomePage/index" open-type="switchTab">首页</navigator>
+
+
+
+<navigator url="/page/LoginPage/index">登录</navigator>
+
+<navigator url="/page/PrivateKitchenDetails/index" >私厨详情</navigator>
+
+<navigator url="/page/BookPage/index">预定</navigator>
+
+<navigator url="/page/BookPage/page/CalendarPage/index">日期选择</navigator>
+
+<navigator url="/page/OrderPage/index" open-type="switchTab">订单</navigator>
