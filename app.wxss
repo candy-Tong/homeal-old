@@ -1,4 +1,41 @@
 /* reset */
+.icon_selected {
+  display: block;
+  margin: 0 auto;
+  width: 24px;
+  height: 24px;
+  background-image: url("http://candytong.xyz/homeal/icon/icon_selected@2x.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 3.0),
+       screen and (min--moz-device-pixel-ratio: 3.0),
+       screen and (min-device-pixel-ratio: 3.0),
+       screen and (min-resolution: 3.0dppx) {
+  .icon-selected {
+    background-image: url("http://candytong.xyz/homeal/icon/icon_selected@3x.png");
+  }
+}
+
+.icon_unselected {
+  display: block;
+  margin: 0 auto;
+  width: 24px;
+  height: 24px;
+  background-image: url("http://candytong.xyz/homeal/icon/icon_unselected@2x.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 3.0),
+       screen and (min--moz-device-pixel-ratio: 3.0),
+       screen and (min-device-pixel-ratio: 3.0),
+       screen and (min-resolution: 3.0dppx) {
+  .icon-unselected {
+    background-image: url("/image/icon_unselected@2x.png");
+  }
+}
 
 .icon-prev {
   display: block;
@@ -649,7 +686,7 @@ form {
        screen and (min--moz-device-pixel-ratio: 3.0),
        screen and (min-device-pixel-ratio: 3.0),
        screen and (min-resolution: 3.0dppx) {
-  .show-more-icon {
+  .tag-icon {
     background-image: url("http://candytong.xyz/homeal/home/tag_icon@3x.png.png");
   }
 }

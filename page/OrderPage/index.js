@@ -47,7 +47,29 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.getStorage({
+      key: 'userToken',
+      success: function (res) {
+        console.log(res);
+        if (res.data == undefined) {
+          wx.navigateTo({
+            url: '/page/LoginPage/index',
+            success: function (res) { },
+            fail: function (res) { },
+            complete: function (res) { },
+          });
+        }
+      },
+      fail: function (res) {
+        wx.navigateTo({
+          url: '/page/LoginPage/index',
+          success: function (res) { },
+          fail: function (res) { },
+          complete: function (res) { },
+        });
+      },
+      complete: function (res) { },
+    })
   },
 
   /**
@@ -61,7 +83,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**

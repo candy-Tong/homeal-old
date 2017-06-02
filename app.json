@@ -1,13 +1,16 @@
 {
   "pages": [
-    "page/ShowPage/index",
-    "page/HomePage/index",
     
+    "page/HomePage/index",
+    "page/LoginPage/index",
     "page/BookPage/page/CalendarPage/index",
+    
+    
+    
     "page/BookPage/index",
     "page/OrderPage/index",
     "page/PrivateKitchenDetails/index",
-    "page/LoginPage/index",
+    
     "page/PrivateKitchenDetails/page/recommend-menu/recommend",
     "page/PrivateKitchenDetails/page/optional-menu/optional",
     "page/PrivateKitchenDetails/page/rating/rating",
@@ -63,7 +66,7 @@
         "text": "订单"
       },
       {
-        "pagePath": "page/ShowPage/index",
+        "pagePath": "page/component/index",
         "iconPath": "image/icon_me.png",
         "selectedIconPath": "image/icon_me.png",
         "text": "其他"

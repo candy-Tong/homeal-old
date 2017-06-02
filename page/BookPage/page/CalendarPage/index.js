@@ -3,20 +3,41 @@ const conf = {
     hasEmptyGrid: false,
     pre_button_show: false,
     selected: 2,
-    disableList: [13, 14, 15, 16, 17, 18, 19, 20]
+    disableList: [13, 14, 15, 16, 17, 18, 19, 20],
+    hour: [11, 12, 13, 14],
+    index: 1,
+    selected: 0,
+    meal_time: 0
   },
   onLoad(options) {
+    // 初始化日期
     const date = new Date();
     const cur_year = date.getFullYear();
     const cur_month = date.getMonth() + 1;
     const weeks_ch = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
     this.calculateDays(cur_year, cur_month);
+
+    let min = [];
+    //初始化日期选择器
+    for (let i = 0; i < 60; i++) {
+      min.push((Array(2).join(0) + i).slice(-2));
+    }
+    console.log(this.data.min);
+
     this.setData({
       cur_year,
       cur_month,
-      weeks_ch
-    })
+      weeks_ch,
+      min
+    });
   },
+  //勾选时间
+  selectChange(e) {
+    this.setData({
+      meal_time: parseInt(e.currentTarget.id)
+    });
+  },
+
 
   //选择日期
   selectDate(e) {

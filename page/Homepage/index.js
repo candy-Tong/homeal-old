@@ -16,7 +16,6 @@ Page({
     wx.request({
       url: 'http://homeal.com.hk/api/main_rest/banners',
       success(res) {
-        // console.log(res.data);
         
         _this.setData({
           banner: res.data.result

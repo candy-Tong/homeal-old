@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    phone: '',
+    sms_code: '',
     verification: "获取验证码",
     ready: true,
     reSend: false,
@@ -15,20 +16,93 @@ Page({
     errorMsg: ''
   },
 
+  //获取输入的手机号
+  getPhone: function (e) {
+    // console.log(e.detail.value);
+    this.setData({
+      phone: e.detail.value
+    })
+  },
+
+  //获取输入的验证码
+  getSms_code: function (e) {
+    // console.log(e.detail.value);
+    this.setData({
+      sms_code: e.detail.value
+    })
+  },
+
+  //登录
+  submit(){
+    let _this=this;
+    wx.request({
+      url: 'http://homeal.com.hk/api/login_rest/login',
+      data: {
+        phone: _this.data.phone,
+        sms_code: _this.data.sms_code
+      },
+      method: 'POST',
+      success: function(res) {
+        console.log(res);
+        if(res.data.is_error!=undefined&&res.data.is_error==false){
+          wx.setStorage({
+            key: 'userToken',
+            data: res.data.result,
+            success: function(res) {
+              console.log("登录成功");
+              wx.navigateBack({
+                delta: 1,
+              });
+            },
+            fail: function(res) {},
+            complete: function(res) {},
+          })
+        }
+      },
+      fail: function(res) {
+        console.log(res);
+      },
+      complete: function(res) {},
+    })
+  },
 
   /**
    * 发送短信
    */
   sendMsg() {
-    if (this.data.ready) {
-      this.setData({
-        ready: false,
-        reSend: false
-      });
-      console.log("发送短信");
-      var countdown = 60;
-      this.settime(countdown);
-    }
+    let _this = this;
+    wx.request({
+      url: 'http://homeal.com.hk/api/login_rest/smscode',
+      data: {},
+      header: {
+        phone: _this.data.phone
+      },
+      method: 'GET',
+      success: function (res) {
+        console.log(res.data);
+        if (res.data.is_error != undefined && res.data.is_error == false) {
+          if (_this.data.ready) {
+            _this.setData({
+              ready: false,
+              reSend: false
+            });
+            console.log("发送短信");
+            var countdown = 60;
+            _this.settime(countdown);
+          }
+        }
+      },
+      fail: function (res) {
+        status: false
+        console.log("失败");
+        console.log(res);
+      },
+      complete: function (res) {
+        console.log("完成");
+      },
+    })
+
+
   },
   /**
    * 计时器函数

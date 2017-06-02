@@ -10,7 +10,7 @@
   </view>
 </view>
 
-
+<!--日历-->
 <view class="calendar-box">
 
   <view class="calendar-line week-name">
@@ -21,11 +21,44 @@
 
   <!--日*-->
   <view class="calendar-line day-line" wx:for="{{days}}" wx:for-index="line_index" wx:for-item="line_item" wx:key="*this">
-    <view id="{{item}}" class="calendar-cell day {{item>=13&&item<22?'disable':''}}"  wx:for="{{line_item}}" wx:key="*this" bindtap="selectDate">
+    <view id="{{item}}" class="calendar-cell day {{item>=13&&item<22?'disable':''}}" wx:for="{{line_item}}" wx:key="*this" bindtap="selectDate">
       <view class="cell {{item==selected&&selected!==0?'selected':''}}">
         {{item===0?'':item}}
       </view>
     </view>
   </view>
+</view>
+
+<view class="meal-time">
+
+  <view class="select-box" bindtap="selectChange" id="0">
+    <view class="{{meal_time===0?'icon_selected':'icon_unselected'}}"></view>
+    <view class="meal-type">中餐</view>
+  </view>
+
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{hour}}">
+    <view class="picker">
+      {{hour[index]}} : 00
+    </view>
+  </picker>
+
+</view>
+
+<view class="meal-time">
+
+  <view class="select-box" bindtap="selectChange" id="1">
+    <view class="{{meal_time===1?'icon_selected':'icon_unselected'}}"></view>
+    <view class="meal-type">晚餐</view>
+  </view>
+
+
+
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{hour}}">
+    <view class="picker">
+      {{hour[index]}} : 00
+    </view>
+  </picker>
+
+<view class="footer">确定</view>
 
 </view>
