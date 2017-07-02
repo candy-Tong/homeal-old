@@ -10,8 +10,8 @@ page{
   background: #a91b07;
   overflow: hidden;
   color: white;
-  padding: 1px 0 7px 0;
-  font-size: 14px;
+  padding: 2rpx 0 14rpx 0;
+  font-size: 28rpx;
 }
 
 .position {
@@ -23,9 +23,9 @@ page{
 .currentArea {
   float: left;
   text-align: center;
-  height: 27px;
-  line-height: 27px;
-  margin-right: 9px;
+  height: 54rpx;
+  line-height: 54rpx;
+  margin-right: 18rpx;
   color: rgba(255, 255, 255, 1);
 }
 
@@ -33,22 +33,22 @@ page{
   position: relative;
   flex-grow: 1;
   background: white;
-  border-radius: 25px;
-  height: 25px;
-  line-height: 25px;
+  border-radius: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
 }
 
 .search-icon {
   display: inline-block;
   position: absolute;
-  top: 5px;
-  left: 12px;
-  line-height: 25px;
+  top: 10rpx;
+  left: 24rpx;
+  line-height: 50rpx;
 }
 
 .message {
   float: right;
-  margin: 0 24px 0 20px;
+  margin: 0 48rpx 0 40rpx;
   text-align: center;
 }
 

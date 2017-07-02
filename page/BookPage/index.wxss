@@ -22,9 +22,9 @@ page {
 .chef-name {
   float: left;
   margin-top: 72rpx;
-  font-size: 20px;
+  font-size: 40rpx;
   font-weight: 700;
-  line-height: 20px;
+  line-height: 40rpx;
 }
 
 .line-item {
@@ -51,9 +51,13 @@ page {
   margin-left: 20rpx;
 }
 
-.icon-right {
+.icon-wrapper {
   float: right;
-  margin: 42rpx 32rpx 48rpx 0;
+  padding: 42rpx 50rpx 48rpx 50rpx;
+}
+
+.icon-right {
+  
 }
 
 .icon-add {
@@ -73,14 +77,14 @@ page {
 .price {
   float: left;
   margin-left: 32rpx;
-  font-size: 16px;
+  font-size: 32rpx;
   font-weight: 700;
 }
 
 .pay {
   float: right;
   margin-right: 32rpx;
-  font-size: 19px;
+  font-size: 38rpx;
   font-weight: 700;
   color: rgba(255, 179, 0, 1);
 }

@@ -26,15 +26,14 @@ Page({
 
   //获取输入的验证码
   getSms_code: function (e) {
-    // console.log(e.detail.value);
     this.setData({
-      sms_code: e.detail.value
+      sms_code: e.detail.value,
     })
   },
 
   //登录
-  submit(){
-    let _this=this;
+  submit() {
+    let _this = this;
     wx.request({
       url: 'http://homeal.com.hk/api/login_rest/login',
       data: {
@@ -42,27 +41,35 @@ Page({
         sms_code: _this.data.sms_code
       },
       method: 'POST',
-      success: function(res) {
+      success: function (res) {
         console.log(res);
-        if(res.data.is_error!=undefined&&res.data.is_error==false){
-          wx.setStorage({
-            key: 'userToken',
-            data: res.data.result,
-            success: function(res) {
-              console.log("登录成功");
-              wx.navigateBack({
-                delta: 1,
-              });
-            },
-            fail: function(res) {},
-            complete: function(res) {},
-          })
+        if (res.data.is_error != undefined && res.data.is_error == false && res.data.result !== undefined) {
+          try {
+            wx.setStorageSync('phone', _this.data.phone)
+            wx.setStorageSync('token', res.data.result)
+            wx.navigateBack({
+              delta: 1,
+            });
+          } catch (e) {
+            console.log("存储phone出错")
+            console.log(e)
+          }
+        }
+        else {
+          console.log("验证码错误");
+          wx.showModal({
+            content: '验证码错误',
+            showCancel: false,
+            success: function (res) {
+
+            }
+          });
         }
       },
-      fail: function(res) {
+      fail: function (res) {
         console.log(res);
       },
-      complete: function(res) {},
+      complete: function (res) { },
     })
   },
 
@@ -70,7 +77,28 @@ Page({
    * 发送短信
    */
   sendMsg() {
+
+    if (this.data.ready !== true)
+      return
+
+    if (this.data.phone.length != 10 && this.data.phone.length != 11) {
+      wx.showModal({
+        content: '手机号格式错误',
+        showCancel: false,
+        success: function (res) {
+
+        }
+      });
+      return
+    }
+
+    this.setData({
+      ready: false
+    })
+    // console.log(this.data.phone);
+    
     let _this = this;
+
     wx.request({
       url: 'http://homeal.com.hk/api/login_rest/smscode',
       data: {},
@@ -83,7 +111,6 @@ Page({
         if (res.data.is_error != undefined && res.data.is_error == false) {
           if (_this.data.ready) {
             _this.setData({
-              ready: false,
               reSend: false
             });
             console.log("发送短信");
@@ -150,7 +177,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    TD.Page.load(true); // 此时，需要在TD.Page.load()中设置参数true，用于说明此时为Tabs方式；
 
   },
 

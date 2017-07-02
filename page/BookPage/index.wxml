@@ -9,9 +9,12 @@
 <view class="line-item">
   <view class="icon-menu"></view>
   <view class="line-text">套餐:
-    <text class="content">套餐一</text>
+    <text class="content">{{order.menu_name}}</text>
   </view>
-  <view class="icon-right"></view>
+  <view class="icon-wrapper">
+    <view class="icon-right"></view>
+  </view>
+  
 </view>
 
 <!--日期-->
@@ -19,10 +22,12 @@
   <view class="icon-date"></view>
   <view class="line-text">
     日期:
-    <text class="content">2017 / 5 / 2</text>
-    <text class="content">中午12:00</text>
+    <text class="content">{{order.date.year}} / {{order.date.month}} / {{order.date.day}}</text>
+    <text class="content">{{order.time}}</text>
   </view>
-  <view class="icon-right"></view>
+  <view class="icon-wrapper" bindtap="selectDate">
+    <view class="icon-right" ></view>
+  </view>
 </view>
 
 <!--人数-->
@@ -30,10 +35,10 @@
   <view class="icon-person"></view>
   <view class="line-text">
     人数:
-    <text class="content">2人</text>
+    <text class="content">{{order.people_no}}</text>
   </view>
-  <view class="icon-add"></view>
-  <view class="icon-dec"></view>
+  <view class="icon-add" bindtap="addPerson"></view>
+  <view class="icon-dec" bindtap="descPerson"></view>
 </view>
 
 <view class="line-item price-wrapper">
@@ -44,6 +49,6 @@
 </view>
 
 <view class="note">备注</view>
-<textarea class="note-content" placeholder="（如果您有其他的要求，可以通过备注告知私厨，最多50字符）" placeholder-style="color: rgba(172, 172, 172, 1);" />
+<textarea class="note-content" placeholder="（如果您有其他的要求，可以通过备注告知私厨，最多50字符）" placeholder-style="color: rgba(172, 172, 172, 1);" bindblur="setBookingNotice"/>
 
-<view class="footer">提交订单</view>
+<view class="footer" bindtap="booking">提交订单</view>

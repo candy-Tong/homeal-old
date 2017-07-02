@@ -6,6 +6,7 @@ Page({
     activeIndex: 0,
     sliderOffset: 0,
     chef_detail: {},
+    chef_id:NaN
   },
 
   /**
@@ -18,13 +19,27 @@ Page({
     });
   },
 
+  //进入新建订单页面
+  newOrder(event) {
+    let _this=this;
+    wx.navigateTo({
+      url: '/page/BookPage/index?chef_id=' + _this.data.chef_id
+    })
+  },
+
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
+
+    console.log(options.chef_id);
+    let chef_id = options.chef_id;
+    this.setData({
+      chef_id: chef_id
+    })
     let _this = this;
     wx.request({
       url: 'http://homeal.com.hk/api/chefdetails_rest/chef',
       data: {
-        chef_id: 1
+        chef_id: chef_id
       },
       header: {
         'content-type': 'application/json'

@@ -1,4 +1,0 @@
-<!--page/PrivateKitchenDetails/page/rating/rating.wxml-->
-<template name="rating">
-  <text>用户评价</text>
-</template>

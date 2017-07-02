@@ -2,35 +2,68 @@ const conf = {
   data: {
     hasEmptyGrid: false,
     pre_button_show: false,
-    selected: 2,
+
     disableList: [13, 14, 15, 16, 17, 18, 19, 20],
     hour: [11, 12, 13, 14],
     index: 1,
-    selected: 0,
-    meal_time: 0
+    time: ["12:00", "18:00"]
   },
   onLoad(options) {
-    // 初始化日期
-    const date = new Date();
-    const cur_year = date.getFullYear();
-    const cur_month = date.getMonth() + 1;
-    const weeks_ch = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
-    this.calculateDays(cur_year, cur_month);
+    let date=options.date
+    let time=options.time
+    date=JSON.parse(date)
+   
 
-    let min = [];
-    //初始化日期选择器
-    for (let i = 0; i < 60; i++) {
-      min.push((Array(2).join(0) + i).slice(-2));
+    // 初始化日期
+    // let date = new Date();
+    // const cur_year = date.getFullYear();
+    // const cur_month = date.getMonth() + 1;
+    // const cur_day = date.getUTCDate()+1;
+    const weeks_ch = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+    this.calculateDays(date.year, date.month);
+    let this_time=this.data.time
+    let meal_time
+    if(parseInt(time)<15){
+      this_time[0]=time
+      meal_time=0
+    }else{
+      this_time[1] = time
+      meal_time = 1
     }
-    console.log(this.data.min);
 
     this.setData({
-      cur_year,
-      cur_month,
-      weeks_ch,
-      min
+      date,
+      time:this_time,
+      meal_time,
+      weeks_ch
     });
   },
+
+  // 确定日期 返回
+  finish() {
+    
+    let time = this.data.time[this.data.meal_time]
+    // console.log(date)
+    let pages=getCurrentPages();
+    let prevPage=pages[pages.length-2];
+    prevPage.setData({
+      "order.date": this.data.date,
+      "order.time":time
+    })
+    wx.navigateBack({
+      delta:1
+    })
+  },
+
+  // 选择时间
+  bindTimeChange: function (e) {
+    let time = this.data.time
+    time[e.currentTarget.id] = e.detail.value
+    this.setData({
+      time: time
+    })
+  },
+
   //勾选时间
   selectChange(e) {
     this.setData({
@@ -41,10 +74,10 @@ const conf = {
 
   //选择日期
   selectDate(e) {
-    //出去不可选择的
+    // 除去不可选择的
     if (this.data.disableList.indexOf(parseInt(e.currentTarget.id)) == -1) {
       this.setData({
-        selected: e.currentTarget.id
+        "date.day": e.currentTarget.id
       });
     }
 
@@ -97,8 +130,8 @@ const conf = {
   handleCalendar(e) {
     const today = new Date();
     const handle = e.currentTarget.dataset.handle;
-    const cur_year = this.data.cur_year;
-    const cur_month = this.data.cur_month;
+    const cur_year = this.data.date.year;
+    const cur_month = this.data.date.month;
     if (handle === 'prev') {
       let newMonth = cur_month - 1;
       let newYear = cur_year;
@@ -110,8 +143,8 @@ const conf = {
       this.calculateDays(newYear, newMonth);
 
       this.setData({
-        cur_year: newYear,
-        cur_month: newMonth
+        "date.year": newYear,
+        "date.month": newMonth
       });
 
       //判断是否隐藏月份向前按钮
@@ -134,8 +167,8 @@ const conf = {
       this.calculateDays(newYear, newMonth);
 
       this.setData({
-        cur_year: newYear,
-        cur_month: newMonth
+        "date.year": newYear,
+        "date.month": newMonth
       })
 
       //判断是否显示月份向前按钮
@@ -146,13 +179,6 @@ const conf = {
         });
       }
 
-    }
-  },
-  onShareAppMessage() {
-    return {
-      title: '小程序日历',
-      desc: '还是新鲜的日历哟',
-      path: 'pages/index/index'
     }
   }
 };

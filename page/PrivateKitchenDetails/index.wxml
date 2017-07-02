@@ -1,7 +1,5 @@
 <!--page/PrivateKitchenDetails/index.wxml-->
-<import src="page/recommend-menu/recommend.wxml" />
-<import src="page/optional-menu/optional.wxml" />
-<import src="page/rating/rating.wxml" />
+
 <view class="private-kitchen-detail">
 
   <!--图片轮播-->
@@ -108,4 +106,7 @@
   </view>
 
 
+
 </view>
+
+<view class="footer" bindtap="newOrder">预约</view>

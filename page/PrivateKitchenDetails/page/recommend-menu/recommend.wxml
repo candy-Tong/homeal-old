@@ -1,5 +1,0 @@
-
-<!--page/PrivateKitchenDetails/page/recommend-menu/recommend.wxml-->
-<template name="recommend-menu">
-  <text>推荐菜单</text>
-</template>

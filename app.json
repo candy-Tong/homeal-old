@@ -1,19 +1,17 @@
 {
   "pages": [
     
+    "page/BookPage/index",
     "page/HomePage/index",
+    
+    "page/OrderPage/index",
     "page/LoginPage/index",
+    
+    
     "page/BookPage/page/CalendarPage/index",
     
-    
-    
-    "page/BookPage/index",
-    "page/OrderPage/index",
     "page/PrivateKitchenDetails/index",
     
-    "page/PrivateKitchenDetails/page/recommend-menu/recommend",
-    "page/PrivateKitchenDetails/page/optional-menu/optional",
-    "page/PrivateKitchenDetails/page/rating/rating",
     "page/component/index",
     "page/component/pages/view/view",
     "page/component/pages/scroll-view/scroll-view",

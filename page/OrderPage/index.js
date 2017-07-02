@@ -48,25 +48,26 @@ Page({
    */
   onLoad: function (options) {
     wx.getStorage({
-      key: 'userToken',
+      key: 'token',
       success: function (res) {
         console.log(res);
-        if (res.data == undefined) {
-          wx.navigateTo({
-            url: '/page/LoginPage/index',
-            success: function (res) { },
-            fail: function (res) { },
-            complete: function (res) { },
-          });
-        }
+        // 转到登录页面
+        // if (res.data == undefined) {
+        //   wx.navigateTo({
+        //     url: '/page/LoginPage/index',
+        //     success: function (res) { },
+        //     fail: function (res) { },
+        //     complete: function (res) { },
+        //   });
+        // }
       },
       fail: function (res) {
-        wx.navigateTo({
-          url: '/page/LoginPage/index',
-          success: function (res) { },
-          fail: function (res) { },
-          complete: function (res) { },
-        });
+        // wx.navigateTo({
+        //   url: '/page/LoginPage/index',
+        //   success: function (res) { },
+        //   fail: function (res) { },
+        //   complete: function (res) { },
+        // });
       },
       complete: function (res) { },
     })
