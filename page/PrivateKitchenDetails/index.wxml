@@ -4,7 +4,7 @@
 
   <!--图片轮播-->
   <swiper autoplay="true" class="banner" indicator-dots="true" indicator-color="rgba(255,255,255,0.5)" indicator-active-color="#fff">
-    <block wx:for="{{chef_detail.menus[0].dishes}}" wx:key="{{index}}">
+    <block wx:for="{{chef.menus[0].dishes}}" wx:key="{{index}}">
       <swiper-item>
         <image src="{{item.dish_photo_url}}" class="banner-image" mode="widthFix" />
       </swiper-item>
@@ -15,14 +15,14 @@
   <view class="kitchen-info">
 
     <!--头像 -->
-    <image class="avatar" src="{{chef_detail.chef_avatar_url}}" mode="aspectFill"></image>
+    <image class="avatar" src="{{chef.chef_avatar_url}}" mode="aspectFill"></image>
 
     <view class="info-wrapper">
 
       <!--私厨名称-->
       <view style="overflow:hidden;">
         <view class="kitchen_name">
-          {{chef_detail.kitchen_name}}
+          {{chef.kitchen_name}}
         </view>
         <!--选项-->
         <view class="option">
@@ -34,12 +34,12 @@
       </view>
       <!--简介-->
       <view class="chef_brief">
-        简介: {{chef_detail.chef_brief}}
+        简介: {{chef.chef_brief}}
       </view>
       <!--标签-->
       <view class="tag">
         <view class="tag-icon"></view>
-        {{chef_detail.chef_tag}}
+        {{chef.chef_tag}}
       </view>
 
     </view>
@@ -65,7 +65,7 @@
     <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
 
       <!--单个套餐-->
-      <view class="menu" wx:for="{{chef_detail.menus}}" wx:key="*this">
+      <view class="menu" wx:for="{{chef.menus}}" wx:key="*this">
 
         <!--套餐序号-->
         <view class="index-wrapper">
@@ -109,4 +109,4 @@
 
 </view>
 
-<view class="footer" bindtap="newOrder">预约</view>
+<view class="footer" bindtap="booking">预约</view>

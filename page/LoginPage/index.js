@@ -34,26 +34,36 @@ Page({
   //登录
   submit() {
     let _this = this;
+    let phone = this.data.phone
+    console.log(phone)
+    let token
+    //获取token
     wx.request({
       url: 'http://homeal.com.hk/api/login_rest/login',
       data: {
-        phone: _this.data.phone,
+        phone: phone,
         sms_code: _this.data.sms_code
       },
       method: 'POST',
       success: function (res) {
         console.log(res);
+        token = res.data.result
         if (res.data.is_error != undefined && res.data.is_error == false && res.data.result !== undefined) {
           try {
-            wx.setStorageSync('phone', _this.data.phone)
-            wx.setStorageSync('token', res.data.result)
-            wx.navigateBack({
-              delta: 1,
-            });
+            wx.setStorageSync('phone', phone)
           } catch (e) {
             console.log("存储phone出错")
             console.log(e)
           }
+          try {
+            wx.setStorageSync('token', res.data.result)
+          } catch (e) {
+            console.log("存储token出错")
+            console.log(e)
+          }
+          wx.navigateBack({
+            delta: 1
+          })
         }
         else {
           console.log("验证码错误");
@@ -70,6 +80,28 @@ Page({
         console.log(res);
       },
       complete: function (res) { },
+    })
+
+    // 获取member_id
+    wx.request({
+      url: 'http://homeal.com.hk/api/login_rest/member',
+      method: "GET",
+      header: {
+        phone: _this.data.phone,
+        token: token
+      },
+      success(res) {
+        try {
+          wx.setStorageSync('member_id', res.data.result.member_id)
+          wx.navigateBack({
+            delta: 1,
+          });
+        } catch (e) {
+          console.log("存储phone出错")
+          console.log(e)
+        }
+      }
+
     })
   },
 
@@ -96,7 +128,7 @@ Page({
       ready: false
     })
     // console.log(this.data.phone);
-    
+
     let _this = this;
 
     wx.request({
@@ -109,15 +141,15 @@ Page({
       success: function (res) {
         console.log(res.data);
         if (res.data.is_error != undefined && res.data.is_error == false) {
-          if (_this.data.ready) {
-            _this.setData({
-              reSend: false
-            });
-            console.log("发送短信");
-            var countdown = 60;
-            _this.settime(countdown);
-          }
+
+          _this.setData({
+            reSend: false
+          })
+          console.log("发送短信");
+          var countdown = 60;
+          _this.settime(countdown);
         }
+
       },
       fail: function (res) {
         status: false

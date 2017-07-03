@@ -18,6 +18,38 @@ Page({
     })
   },
 
+  refresh(e){
+    console.log(e)
+    console.log("刷新页面")
+    let _this = this;
+
+    // 请求banner图片
+    wx.request({
+      url: 'http://homeal.com.hk/api/main_rest/banners',
+      success(res) {
+
+        _this.setData({
+          banner: res.data.result
+        });
+      }
+    });
+
+    // 请求chefs信息
+    wx.request({
+      url: 'http://homeal.com.hk/api/main_rest/chefs',
+      data: {
+        page: 1,
+        count: 1
+      },
+      success(res) {
+        console.log(res.data);
+        _this.setData({
+          main_rest: res.data.result
+        });
+      }
+    });
+  },
+
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
     let _this = this;
@@ -62,4 +94,5 @@ Page({
   onUnload: function () {
     // 页面关闭
   }
+
 })

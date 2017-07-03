@@ -28,6 +28,7 @@ page {
 }
 
 .line-item {
+  position: relative;
   border-bottom: 1rpx solid rgb(200, 199, 204);
   overflow: hidden;
   height: 110rpx;
@@ -56,18 +57,21 @@ page {
   padding: 42rpx 50rpx 48rpx 50rpx;
 }
 
-.icon-right {
-  
-}
-
 .icon-add {
-  float: right;
-  margin: 32rpx 32rpx 30rpx 0;
+  position: absolute;
+  bottom: 32rpx;
+  right: 32rpx;
+  /*margin: 32rpx 32rpx 30rpx 0;*/
 }
 
 .icon-dec {
-  float: right;
-  margin: 32rpx 32rpx 30rpx 0;
+  position: absolute;
+  bottom: 32rpx;
+  right: 104rpx;
+}
+
+.disable{
+  opacity: 0.3
 }
 
 .price-wrapper {

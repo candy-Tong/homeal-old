@@ -5,7 +5,7 @@ Page({
     tabs: ["套餐", "信息", "用户评价"],
     activeIndex: 0,
     sliderOffset: 0,
-    chef_detail: {},
+    chef: {},
     chef_id:NaN
   },
 
@@ -20,10 +20,10 @@ Page({
   },
 
   //进入新建订单页面
-  newOrder(event) {
+  booking(event) {
     let _this=this;
     wx.navigateTo({
-      url: '/page/BookPage/index?chef_id=' + _this.data.chef_id
+      url: '/page/BookPage/index?chef=' + JSON.stringify(_this.data.chef)
     })
   },
 
@@ -47,7 +47,7 @@ Page({
       success: function (res) {
         console.log(res.data.result);
         _this.setData({
-          chef_detail: res.data.result
+          chef: res.data.result
         });
       }
     })

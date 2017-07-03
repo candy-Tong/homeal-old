@@ -18,21 +18,21 @@
 
       <view class="order" wx:for="{{orderList}}">
 
-        <image src="{{item.avatar}}" class="avatar" mode="aspectFill"></image>
+        <image src="{{item.chef_avatar_url}}" class="avatar" mode="aspectFill"></image>
         <view class="info-wrapper">
           <view class="status">{{item.accept==0?'未接单':'已接单'}}</view>
-          <view class="chef-name">{{item.name}}</view>
+          <view class="chef-name">{{item.kitchen_name}}</view>
           <view class="order-time">
-            预约时间: {{item.date}} {{item.time}}
+            预约时间: {{item.meal_time}}
           </view>
           <view class="menu">
-            套餐: {{item.menu}}
+            套餐: {{item.menus[0].menu_name}}
           </view>
           <view class="person_num">
-            客人: {{item.person_num}}
+            客人: {{item.menus[0].people_no}}
           </view>
           <view class="note">
-            备注: {{item.note}}
+            备注: {{item.booking_notice}}
           </view>
           <view class="option">
             <view class="contact-chef">联系私厨</view>

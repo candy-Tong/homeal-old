@@ -6,22 +6,19 @@ Page({
    */
   data: {
 
-    chef: {
-      avatar: "http://ralphlauren.scene7.com/is/image/RLContent/20160803_baby_feat_c01?scl=1",
-      chef_name: "小鹿私房菜",
-    },
     order: {
-      menu_id: 1,
-      menu_name: "套餐一",
+      // menu_name: "",
+
+      people_no: NaN,
+      menu_price: NaN,
+      booking_notice: "",
+
       date: {
         year: 2017,
         month: 5,
         day: 2
       },
-      time: "12:00",
-      people_no: 2,
-      price: 168,
-      booking_notice: ""
+      time: "12:00"
     }
   },
 
@@ -42,7 +39,7 @@ Page({
         });
         return
       }
-     
+
     } catch (e) {
       // Do something when catch error
       console.log(e)
@@ -51,9 +48,9 @@ Page({
     let chef_id = this.data.chef_id
     let menus = []
     let menu = {}
-    menu.menu_id = this.data.order.menu_id
+    menu.menu_id = this.data.order.menu.menu_id
     menu.people_no = this.data.order.people_no
-    menu.price = 1
+    menu.menu_price = this.data.order.menu_price
     menus.push(menu)
 
     let meal_time = new Date()
@@ -62,10 +59,10 @@ Page({
     meal_time.setDate(this.data.order.date.day)
     meal_time = meal_time.Format("yyyy-MM-dd " + this.data.order.time + ":00")
 
-    let booking_notice = this.data.booking_notice
+    let booking_notice = this.data.order.booking_notice
 
     wx.request({
-      method:"POST",
+      method: "POST",
       url: 'http://homeal.com.hk/api/booking_rest/booking',
       data: {
         "phone": phone,
@@ -80,13 +77,39 @@ Page({
       },
       success: function (res) {
         console.log(res.data)
+        wx.navigateBack({
+          delta: 1
+        })
       }
     })
-
-
   },
 
   // 套餐选择
+  selectMenu() {
+    let _this = this
+    let menuList = this.data.chef.menus
+    let itemList = []
+    for (let i = 0; i < menuList.length; i++) {
+      itemList.push(menuList[i].menu_name)
+    }
+    wx.showActionSheet({
+      itemList: itemList,
+      success: function (res) {
+        console.log(res.tapIndex)
+
+        _this.setData({
+          "order.menu": menuList[res.tapIndex],
+          "order.people_no": menuList[res.tapIndex].menu_price[0].people,
+          "order.menu_price": menuList[res.tapIndex].menu_price[0].cost,
+
+        })
+      },
+      fail: function (res) {
+        console.log(res.errMsg)
+      }
+    })
+  },
+
 
   // 日期选择
   selectDate() {
@@ -100,17 +123,32 @@ Page({
   // 增加、减少人数
   addPerson() {
     let people_no = this.data.order.people_no
-    people_no++
-    this.setData({
-      "order.people_no": people_no
-    })
+    if (people_no < this.data.order.menu.menu_price[this.data.order.menu.menu_price.length - 1].people) {
+      people_no++
+
+      let menu_price = this.data.order.menu.menu_price.find(function (n) {
+        return n.people == people_no
+      })
+
+      this.setData({
+        "order.people_no": people_no,
+        "order.menu_price": menu_price.cost
+      })
+    }
+
   },
   descPerson() {
     let people_no = this.data.order.people_no
-    if (people_no > 1) {
+    if (people_no > this.data.order.menu.menu_price[0].people) {
       people_no--
+
+      let menu_price = this.data.order.menu.menu_price.find(function (n) {
+        return n.people == people_no
+      })
+
       this.setData({
-        "order.people_no": people_no
+        "order.people_no": people_no,
+        "order.menu_price": menu_price.cost
       })
     }
 
@@ -128,17 +166,40 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.chef_id);
-    let chef_id = options.chef_id
+    console.log(options.chef);
+    let chef = JSON.parse(options.chef)
+    let chef_id = chef.chef_id
+
+    let menu = chef.menus[0]
+
     let today = new Date();
     let date = {}
     date.year = today.getFullYear();
     date.month = today.getMonth() + 1;
     date.day = today.getUTCDate() + 1;
+
+    /**
+     * 处理chef数据
+     * 对menu_price 按人数进行排序
+    */
+
+    for (let i = 0; i < chef.menus.length; i++) {
+      chef.menus[i].menu_price.sort(function (value1, value2) {
+        return value1.people - value2.people
+      })
+    }
+
     this.setData({
       "order.date": date,
-      chef_id
+      chef,
+      chef_id,
+      "order.menu": menu,
+
+      "order.people_no": chef.menus[0].menu_price[0].people,
+      "order.menu_price": chef.menus[0].menu_price[0].cost
     })
+
+
 
   },
 
