@@ -6,12 +6,15 @@ Page({
     activeIndex: 0,
     sliderOffset: 0,
     chef: {},
-    chef_id:NaN
+    chef_id: NaN,
+
+    // 页面渲染完成标志
+    ready: false
   },
 
   /**
    * tab切换
-   */ 
+   */
   tabClick: function (e) {
     this.setData({
       sliderOffset: e.currentTarget.offsetLeft,
@@ -21,7 +24,11 @@ Page({
 
   //进入新建订单页面
   booking(event) {
-    let _this=this;
+    let _this = this;
+    // 页面还没渲染完成
+    if (!this.data.ready) {
+      return false
+    }
     wx.navigateTo({
       url: '/page/BookPage/index?chef=' + JSON.stringify(_this.data.chef)
     })
@@ -32,9 +39,6 @@ Page({
 
     console.log(options.chef_id);
     let chef_id = options.chef_id;
-    this.setData({
-      chef_id: chef_id
-    })
     let _this = this;
     wx.request({
       url: 'http://homeal.com.hk/api/chefdetails_rest/chef',
@@ -47,7 +51,9 @@ Page({
       success: function (res) {
         console.log(res.data.result);
         _this.setData({
-          chef: res.data.result
+          chef: res.data.result,
+          chef_id: chef_id,
+          ready: true
         });
       }
     })

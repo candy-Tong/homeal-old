@@ -1,6 +1,6 @@
 <!--page/HomePage/index.wxml-->
 <view class="homepage">
-  <scroll-view scroll-y scroll-top="0" bindscrolltoupper="refresh" class="scroll">
+  <view class="scroll">
 
     <!--顶部栏-->
     <view class="top">
@@ -27,10 +27,10 @@
 
     <!-- chefs -->
     <view class="main_rest-wrapper" wx:for="{{main_rest}}" wx:key="{{index}}">
-      <view class="kitchen-info">
+      <view class="kitchen-info" bindtap="goChefDetail" data-chef_id="{{main_rest[index].chef_id}}">
 
         <!--头像-->
-        <image class="chef_avatar " src="{{item.chef_avatar_url}} " mode="aspectFill" bindtap="goChefDetail" data-chef_id="{{main_rest[index].chef_id}}"></image>
+        <image class="chef_avatar " src="{{item.chef_avatar_url}} " mode="aspectFill"  ></image>
 
         <!--查看全部-->
         <view class="show-more">查看全部
@@ -67,5 +67,5 @@
         {{item.chef_tag}}
       </view>
     </view>
-  </scroll-view>
+  </view>
 </view>

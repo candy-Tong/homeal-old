@@ -4,7 +4,7 @@ page{
   background-color: #f8f8f8;
 }
 .scroll{
-  height: 1340rpx
+  height: 100%
 }
 
 .top {
@@ -119,6 +119,7 @@ page{
   height: 24px;
   text-overflow: ellipsis;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .show-more {

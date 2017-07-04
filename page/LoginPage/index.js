@@ -61,6 +61,30 @@ Page({
             console.log("存储token出错")
             console.log(e)
           }
+
+          // 获取member_id
+          wx.request({
+            url: 'http://homeal.com.hk/api/login_rest/member',
+            method: "GET",
+            header: {
+              phone: phone,
+              token: token
+            },
+            success(res) {
+              console.log(res)
+              try {
+                wx.setStorageSync('member_id', res.data.result.member_id)
+                wx.navigateBack({
+                  delta: 1,
+                });
+              } catch (e) {
+                console.log("存储member_id出错")
+                console.log(e)
+              }
+            }
+
+          })
+
           wx.navigateBack({
             delta: 1
           })
@@ -82,27 +106,7 @@ Page({
       complete: function (res) { },
     })
 
-    // 获取member_id
-    wx.request({
-      url: 'http://homeal.com.hk/api/login_rest/member',
-      method: "GET",
-      header: {
-        phone: _this.data.phone,
-        token: token
-      },
-      success(res) {
-        try {
-          wx.setStorageSync('member_id', res.data.result.member_id)
-          wx.navigateBack({
-            delta: 1,
-          });
-        } catch (e) {
-          console.log("存储phone出错")
-          console.log(e)
-        }
-      }
-
-    })
+    
   },
 
   /**
@@ -227,37 +231,10 @@ Page({
   },
 
   /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
 
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  }
 })

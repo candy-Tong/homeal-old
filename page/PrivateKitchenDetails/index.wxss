@@ -3,11 +3,11 @@
 /*图片轮播*/
 
 .private-kitchen-detail{
-  margin-bottom: 50px;
+  padding-bottom: 100rpx;
 }
 .banner {
   width: 750rpx;
-  height: 512rpx;
+  height: 480rpx;
 }
 
 .banner-image {

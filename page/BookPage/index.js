@@ -24,18 +24,19 @@ Page({
 
   // 提交订单
   booking() {
+    let _this = this
     // 获取token 和 phone
     try {
       var token = wx.getStorageSync('token')
       var phone = wx.getStorageSync('phone')
       console.log(token)
       console.log(phone)
-      if (token === "" || phone === "" || token === undefined || phone === undefined) {
+      console.log(Boolean(token) + Boolean(phone))
+      if (!token || !phone) {
+
+        console.log("未登录")
         wx.navigateTo({
-          url: '/page/LoginPage/index',
-          success: function (res) { },
-          fail: function (res) { },
-          complete: function (res) { },
+          url: '/page/LoginPage/index'
         });
         return
       }
@@ -44,22 +45,23 @@ Page({
       // Do something when catch error
       console.log(e)
     }
-
-    let chef_id = this.data.chef_id
+    
+    // 新增订单
+    let chef_id = _this.data.chef_id
     let menus = []
     let menu = {}
-    menu.menu_id = this.data.order.menu.menu_id
-    menu.people_no = this.data.order.people_no
-    menu.menu_price = this.data.order.menu_price
+    menu.menu_id = _this.data.order.menu.menu_id
+    menu.people_no = _this.data.order.people_no
+    menu.menu_price = _this.data.order.menu_price
     menus.push(menu)
 
     let meal_time = new Date()
-    meal_time.setFullYear(this.data.order.date.year)
-    meal_time.setMonth(this.data.order.date.month - 1)
-    meal_time.setDate(this.data.order.date.day)
-    meal_time = meal_time.Format("yyyy-MM-dd " + this.data.order.time + ":00")
+    meal_time.setFullYear(_this.data.order.date.year)
+    meal_time.setMonth(_this.data.order.date.month - 1)
+    meal_time.setDate(_this.data.order.date.day)
+    meal_time = meal_time.Format("yyyy-MM-dd " + _this.data.order.time + ":00")
 
-    let booking_notice = this.data.order.booking_notice
+    let booking_notice = _this.data.order.booking_notice
 
     wx.request({
       method: "POST",
@@ -77,11 +79,19 @@ Page({
       },
       success: function (res) {
         console.log(res.data)
+        if (res.data.error_code == '400') {
+          console.log("token已过期")
+          wx.navigateTo({
+            url: '/page/LoginPage/index'
+          });
+          return false
+        }
         wx.navigateBack({
           delta: 1
         })
       }
     })
+
   },
 
   // 套餐选择
@@ -158,7 +168,7 @@ Page({
   setBookingNotice(e) {
     // console.log(e.detail)
     this.setData({
-      booking_notice: e.detail.value
+      "order.booking_notice": e.detail.value
     })
   },
 
@@ -166,7 +176,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.chef);
     let chef = JSON.parse(options.chef)
     let chef_id = chef.chef_id
 
