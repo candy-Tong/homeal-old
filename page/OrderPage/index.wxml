@@ -1,4 +1,5 @@
 <!--page/OrderPage/index.wxml-->
+<import src="order.wxml" />
 
 <view class="order-page">
 
@@ -12,42 +13,35 @@
     <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
   </view>
 
+  <!--
+  0/booked,
+  1/booked&accepted,
+  2/paid
+  3/paid&received  
+  -->
 
   <view class="order__panel">
+
+<!--待付款-->
     <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
-
-      <view class="order" wx:for="{{orderList}}">
-
-        <image src="{{item.chef_avatar_url}}" class="avatar" mode="aspectFill"></image>
-        <view class="info-wrapper">
-          <view class="status">{{item.accept==0?'未接单':'已接单'}}</view>
-          <view class="chef-name">{{item.kitchen_name}}</view>
-          <view class="order-time">
-            预约时间: {{item.meal_time}}
-          </view>
-          <view class="menu">
-            套餐: {{item.menus[0].menu_name}}
-          </view>
-          <view class="person_num">
-            客人: {{item.menus[0].people_no}}
-          </view>
-          <view class="note">
-            备注: {{item.booking_notice}}
-          </view>
-          <view class="option">
-            <view class="contact-chef">联系私厨</view>
-            <view class="cancel-order">取消订单</view>
-            <view class="pay" style="{{item.accept==0?'visibility:hidden':''}}">付款</view>
-          </view>
-
-        </view>
-
+      <view class="order" wx:for="{{orderList}}" wx:if="{{item.booking_status==0||item.booking_status==1}}">
+        <template is="order" data="{{...item}}" />
       </view>
-
-
     </view>
-    <view class="weui-tab__content" hidden="{{activeIndex != 1}}">选项二的内容</view>
-    <view class="weui-tab__content" hidden="{{activeIndex != 2}}">选项三的内容</view>
+
+<!--进行中-->
+    <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+      <view class="order" wx:for="{{orderList}}" wx:if="{{item.booking_status==1}}">
+        <template is="order" data="{{...item}}" />
+      </view>
+    </view>
+
+<!--历史订单-->
+    <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+      <view class="order" wx:for="{{orderList}}" wx:if="{{item.booking_status==3}}">
+        <template is="order" data="{{...item}}" />
+      </view>
+    </view>
   </view>
 
 </view>

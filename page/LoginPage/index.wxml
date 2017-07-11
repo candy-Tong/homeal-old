@@ -4,8 +4,8 @@
   <!--<image mode="scaleToFill" src="{{background}}" class="background"></image>-->
   <view class="name">Homeal</view>
   <view class="user-input">
-    <input class="phone" placeholder="请输入手机号" placeholder-style="color:white;opacity: 0.87;" type="number" bindinput="getPhone" />
-    <input class="verification {{hasError?'error':''}}" placeholder="请输入验证码" placeholder-style="color:white;opacity: 0.87;" type="number" bindinput="getSms_code" />
+    <input class="phone" placeholder="请输入手机号" placeholder-style="color:white;opacity: 0.87;"             bindinput="getPhone" focus="true" />
+    <input class="verification {{hasError?'error':''}}" placeholder="请输入验证码" placeholder-style="color:white;opacity: 0.87;" bindinput="getSms_code" />
     <button class="get-verification {{reSend?'ready':''}}" bindtap="sendMsg">
       {{verification}}
     </button>

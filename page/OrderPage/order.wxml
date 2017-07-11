@@ -1,0 +1,40 @@
+<template name="order">
+
+  <!--
+  0/booked,
+  1/booked&accepted,
+  2/paid
+  3/paid&received  
+  -->
+
+  <image src="{{chef_avatar_url}}" class="avatar" mode="aspectFill"></image>
+  <view class="info-wrapper">
+
+    <view class="status">
+      {{booking_status==0?'未接单':''}}
+      {{booking_status==0?'已接单':''}}
+      {{booking_status==0?'已付款':''}}
+      {{booking_status==0?'已完成':''}}
+    </view>
+    <view class="chef-name">{{kitchen_name}}</view>
+    <view class="order-time">
+      预约时间: {{meal_time}}
+    </view>
+    <view class="menu">
+      套餐: {{menus[0].menu_name}}
+    </view>
+    <view class="person_num">
+      客人: {{menus[0].people_no}}
+    </view>
+    <view class="note">
+      备注: {{booking_notice}}
+    </view>
+    <view class="option">
+      <view class="contact-chef">联系私厨</view>
+      <view class="cancel-order" wx:if="{{booking_status!=4}}">取消订单</view>
+      <view class="pay" wx:if="{{booking_status==1}}">付款</view>
+    </view>
+
+  </view>
+
+</template>
