@@ -6,7 +6,7 @@
   margin: 0 auto;
   width: 24px;
   height: 24px;
-  background-image: url("http://123.207.244.80/homeal/icon/icon_selected@2x.png");
+  background-image: url("http://119.29.162.17/homeal/icon/icon_selected@2x.png");
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -16,7 +16,7 @@
        screen and (min-device-pixel-ratio: 3.0),
        screen and (min-resolution: 3.0dppx) {
   .icon-selected {
-    background-image: url("http://123.207.244.80/homeal/icon/icon_selected@3x.png");
+    background-image: url("http://119.29.162.17/homeal/icon/icon_selected@3x.png");
   }
 }
 
@@ -25,7 +25,7 @@
   margin: 0 auto;
   width: 24px;
   height: 24px;
-  background-image: url("http://123.207.244.80/homeal/icon/icon_unselected@2x.png");
+  background-image: url("http://119.29.162.17/homeal/icon/icon_unselected@2x.png");
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -44,7 +44,7 @@
   margin: 0 auto;
   width: 8px;
   height: 13px;
-  background-image: url("http://123.207.244.80/homeal/icon/icon_left2@2x.png");
+  background-image: url("http://119.29.162.17/homeal/icon/icon_left2@2x.png");
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -54,7 +54,7 @@
        screen and (min-device-pixel-ratio: 3.0),
        screen and (min-resolution: 3.0dppx) {
   .icon-prev {
-    background-image: url("http://123.207.244.80/homeal/icon/icon_left2@3x.png");
+    background-image: url("http://119.29.162.17/homeal/icon/icon_left2@3x.png");
   }
 }
 
@@ -63,7 +63,7 @@
   margin: 0 auto;
   width: 8px;
   height: 13px;
-  background-image: url("http://123.207.244.80/homeal/icon/icon_right2@2x.png");
+  background-image: url("http://119.29.162.17/homeal/icon/icon_right2@2x.png");
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -73,7 +73,7 @@
        screen and (min-device-pixel-ratio: 3.0),
        screen and (min-resolution: 3.0dppx) {
   .icon-next {
-    background-image: url("http://123.207.244.80/homeal/icon/icon_right2@3x.png");
+    background-image: url("http://119.29.162.17/homeal/icon/icon_right2@3x.png");
   }
 }
 
@@ -82,7 +82,7 @@
   margin: 0 auto;
   width: 24px;
   height: 24px;
-  background-image: url("http://123.207.244.80/homeal/icon/add_icon@2x.png");
+  background-image: url("http://119.29.162.17/homeal/icon/add_icon@2x.png");
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -92,7 +92,7 @@
        screen and (min-device-pixel-ratio: 3.0),
        screen and (min-resolution: 3.0dppx) {
   .icon-add {
-    background-image: url("http://123.207.244.80/homeal/icon/add_icon@3x.png");
+    background-image: url("http://119.29.162.17/homeal/icon/add_icon@3x.png");
   }
 }
 
@@ -101,7 +101,7 @@
   margin: 0 auto;
   width: 24px;
   height: 24px;
-  background-image: url("http://123.207.244.80/homeal/icon/dec_icon@2x.png");
+  background-image: url("http://119.29.162.17/homeal/icon/dec_icon@2x.png");
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -111,7 +111,7 @@
        screen and (min-device-pixel-ratio: 3.0),
        screen and (min-resolution: 3.0dppx) {
   .icon-dec {
-    background-image: url("http://123.207.244.80/homeal/icon/dec_icon@3x.png");
+    background-image: url("http://119.29.162.17/homeal/icon/dec_icon@3x.png");
   }
 }
 
@@ -120,7 +120,7 @@
   margin: 0 auto;
   width: 24px;
   height: 24px;
-  background-image: url("http://123.207.244.80/homeal/icon/num_icon@2x.png");
+  background-image: url("http://119.29.162.17/homeal/icon/num_icon@2x.png");
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -130,7 +130,7 @@
        screen and (min-device-pixel-ratio: 3.0),
        screen and (min-resolution: 3.0dppx) {
   .icon-person {
-    background-image: url("http://123.207.244.80/homeal/icon/num_icon@3x.png");
+    background-image: url("http://119.29.162.17/homeal/icon/num_icon@3x.png");
   }
 }
 
@@ -139,7 +139,7 @@
   margin: 0 auto;
   width: 24px;
   height: 24px;
-  background-image: url("http://123.207.244.80/homeal/icon/date_icon@2x.png");
+  background-image: url("http://119.29.162.17/homeal/icon/date_icon@2x.png");
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -149,7 +149,7 @@
        screen and (min-device-pixel-ratio: 3.0),
        screen and (min-resolution: 3.0dppx) {
   .icon-date {
-    background-image: url("http://123.207.244.80/homeal/icon/date_icon@3x.png");
+    background-image: url("http://119.29.162.17/homeal/icon/date_icon@3x.png");
   }
 }
 
@@ -158,7 +158,7 @@
   margin: 0 auto;
   width: 8px;
   height: 13px;
-  background-image: url("http://123.207.244.80/homeal/icon/icon_right@2x.png");
+  background-image: url("http://119.29.162.17/homeal/icon/icon_right@2x.png");
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -168,7 +168,7 @@
        screen and (min-device-pixel-ratio: 3.0),
        screen and (min-resolution: 3.0dppx) {
   .icon-right {
-    background-image: url("http://123.207.244.80/homeal/icon/icon_right@3x.png");
+    background-image: url("http://119.29.162.17/homeal/icon/icon_right@3x.png");
   }
 }
 
@@ -177,7 +177,7 @@
   margin: 0 auto;
   width: 24px;
   height: 24px;
-  background-image: url("http://123.207.244.80/homeal/icon/menu_icon@2x.png.png");
+  background-image: url("http://119.29.162.17/homeal/icon/menu_icon@2x.png.png");
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -187,7 +187,7 @@
        screen and (min-device-pixel-ratio: 3.0),
        screen and (min-resolution: 3.0dppx) {
   .icon-menu {
-    background-image: url("http://123.207.244.80/homeal/icon/menu_icon@3x.png.png");
+    background-image: url("http://119.29.162.17/homeal/icon/menu_icon@3x.png.png");
   }
 }
 
@@ -196,7 +196,7 @@
   margin: 0 auto;
   width: 22px;
   height: 19px;
-  background-image: url("http://123.207.244.80/homeal/icon/chat_icon@2x.png.png");
+  background-image: url("http://119.29.162.17/homeal/icon/chat_icon@2x.png.png");
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -206,7 +206,7 @@
        screen and (min-device-pixel-ratio: 3.0),
        screen and (min-resolution: 3.0dppx) {
   .chat-icon {
-    background-image: url("http://123.207.244.80/homeal/icon/chat_icon@3x.png.png");
+    background-image: url("http://119.29.162.17/homeal/icon/chat_icon@3x.png.png");
   }
 }
 
@@ -215,7 +215,7 @@
   margin: 0 auto;
   width: 20px;
   height: 19px;
-  background-image: url("http://123.207.244.80/homeal/icon/favor_icon@2x.png.png");
+  background-image: url("http://119.29.162.17/homeal/icon/favor_icon@2x.png.png");
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -225,7 +225,7 @@
        screen and (min-device-pixel-ratio: 3.0),
        screen and (min-resolution: 3.0dppx) {
   .favor-icon {
-    background-image: url("http://123.207.244.80/homeal/icon/favor_icon@3x.png.png");
+    background-image: url("http://119.29.162.17/homeal/icon/favor_icon@3x.png.png");
   }
 }
 
@@ -235,7 +235,7 @@
   margin-top: 12px;
   width: 96rpx;
   height: 96rpx;
-  background-image: url("http://123.207.244.80/homeal/login/WeChat@2x.png.png");
+  background-image: url("http://119.29.162.17/homeal/login/WeChat@2x.png.png");
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -245,7 +245,7 @@
        screen and (min-device-pixel-ratio: 3.0),
        screen and (min-resolution: 3.0dppx) {
   .wechat {
-    background-image: url("http://123.207.244.80/homeal/login/WeChat@3x.png.png");
+    background-image: url("http://119.29.162.17/homeal/login/WeChat@3x.png.png");
   }
 }
 
@@ -255,7 +255,7 @@
   margin-right: 2px;
   width: 17px;
   height: 27px;
-  background-image: url("http://123.207.244.80/homeal/home/location_pin@2x.png.png");
+  background-image: url("http://119.29.162.17/homeal/home/location_pin@2x.png.png");
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -267,7 +267,7 @@
        screen and (min-device-pixel-ratio: 3.0),
        screen and (min-resolution: 3.0dppx) {
   .position-icon {
-    background-image: url("http://123.207.244.80/homeal/home/location_pin@3x.png.png");
+    background-image: url("http://119.29.162.17/homeal/home/location_pin@3x.png.png");
   }
 }
 
@@ -278,7 +278,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
-  background-image: url("http://123.207.244.80/homeal/home/message_icon@2x.png.png");
+  background-image: url("http://119.29.162.17/homeal/home/message_icon@2x.png.png");
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 3.0),
@@ -286,7 +286,7 @@
        screen and (min-device-pixel-ratio: 3.0),
        screen and (min-resolution: 3.0dppx) {
   .message-icon {
-    background-image: url("http://123.207.244.80/homeal/home/message_icon@3x.png.png");
+    background-image: url("http://119.29.162.17/homeal/home/message_icon@3x.png.png");
   }
 }
 
@@ -298,7 +298,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
-  background-image: url("http://123.207.244.80/homeal/home/more_icon_right@2x.png.png");
+  background-image: url("http://119.29.162.17/homeal/home/more_icon_right@2x.png.png");
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 3.0),
@@ -306,7 +306,7 @@
        screen and (min-device-pixel-ratio: 3.0),
        screen and (min-resolution: 3.0dppx) {
   .show-more-icon {
-    background-image: url("http://123.207.244.80/homeal/home/more_icon_right@3x.png.png");
+    background-image: url("http://119.29.162.17/homeal/home/more_icon_right@3x.png.png");
   }
 }
 
@@ -319,7 +319,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
-  background-image: url("http://123.207.244.80/homeal/home/tag_icon@2x.png.png");
+  background-image: url("http://119.29.162.17/homeal/home/tag_icon@2x.png.png");
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 3.0),
@@ -327,7 +327,7 @@
        screen and (min-device-pixel-ratio: 3.0),
        screen and (min-resolution: 3.0dppx) {
   .show-more-icon {
-    background-image: url("http://123.207.244.80/homeal/home/tag_icon@3x.png.png");
+    background-image: url("http://119.29.162.17/homeal/home/tag_icon@3x.png.png");
   }
 }
 
@@ -598,7 +598,7 @@ form {
   margin-right: 2px;
   width: 17px;
   height: 27px;
-  background-image: url("http://123.207.244.80/homeal/home/location_pin@2x.png.png");
+  background-image: url("http://119.29.162.17/homeal/home/location_pin@2x.png.png");
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -610,7 +610,7 @@ form {
        screen and (min-device-pixel-ratio: 3.0),
        screen and (min-resolution: 3.0dppx) {
   .position-icon {
-    background-image: url("http://123.207.244.80/homeal/home/location_pin@3x.png.png");
+    background-image: url("http://119.29.162.17/homeal/home/location_pin@3x.png.png");
   }
 }
 
@@ -621,7 +621,7 @@ form {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
-  background-image: url("http://123.207.244.80/homeal/home/message_icon@2x.png.png");
+  background-image: url("http://119.29.162.17/homeal/home/message_icon@2x.png.png");
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 3.0),
@@ -629,7 +629,7 @@ form {
        screen and (min-device-pixel-ratio: 3.0),
        screen and (min-resolution: 3.0dppx) {
   .message-icon {
-    background-image: url("http://123.207.244.80/homeal/home/message_icon@3x.png.png");
+    background-image: url("http://119.29.162.17/homeal/home/message_icon@3x.png.png");
   }
 }
 
@@ -641,7 +641,7 @@ form {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
-  background-image: url("http://123.207.244.80/homeal/home/more_icon_right@2x.png.png");
+  background-image: url("http://119.29.162.17/homeal/home/more_icon_right@2x.png.png");
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 3.0),
@@ -649,7 +649,7 @@ form {
        screen and (min-device-pixel-ratio: 3.0),
        screen and (min-resolution: 3.0dppx) {
   .show-more-icon {
-    background-image: url("http://123.207.244.80/homeal/home/more_icon_right@3x.png.png");
+    background-image: url("http://119.29.162.17/homeal/home/more_icon_right@3x.png.png");
   }
 }
 
@@ -662,7 +662,7 @@ form {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
-  background-image: url("http://123.207.244.80/homeal/home/tag_icon@2x.png.png");
+  background-image: url("http://119.29.162.17/homeal/home/tag_icon@2x.png.png");
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 3.0),
@@ -670,7 +670,7 @@ form {
        screen and (min-device-pixel-ratio: 3.0),
        screen and (min-resolution: 3.0dppx) {
   .tag-icon {
-    background-image: url("http://123.207.244.80/homeal/home/tag_icon@3x.png.png");
+    background-image: url("http://119.29.162.17/homeal/home/tag_icon@3x.png.png");
   }
 }
 

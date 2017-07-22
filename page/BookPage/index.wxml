@@ -1,61 +1,65 @@
 <!--page/BookPage/index.wxml-->
 
-<view class="chef-info">
-  <image src="{{chef.chef_avatar_url}}" mode="aspectFill" class="avatar"></image>
-  <text class="chef-name">{{chef.kitchen_name}}</text>
-</view>
+<form bindsubmit="booking" report-submit="true">
 
-<!--套餐-->
-<view class="line-item">
-  <view class="icon-menu"></view>
-  <view class="line-text">套餐:
-    <text class="content">{{order.menu.menu_name}}</text>
-  </view>
-  <view class="icon-wrapper" bindtap="selectMenu">
-    <view class="icon-right"></view>
+  <view class="chef-info">
+    <image src="{{chef.chef_avatar_url}}" mode="aspectFill" class="avatar"></image>
+    <text class="chef-name">{{chef.kitchen_name}}</text>
   </view>
 
-</view>
+  <!--套餐-->
+  <view class="line-item">
+    <view class="icon-menu"></view>
+    <view class="line-text">套餐:
+      <text class="content">{{order.menu.menu_name}}</text>
+    </view>
+    <view class="icon-wrapper" bindtap="selectMenu">
+      <view class="icon-right"></view>
+    </view>
 
-<!--日期-->
-<view class="line-item">
-  <view class="icon-date"></view>
-  <view class="line-text">
-    日期:
-    <text class="content">{{order.date.year}} / {{order.date.month}} / {{order.date.day}}</text>
-    <text class="content">{{order.time}}</text>
-  </view>
-  <view class="icon-wrapper" bindtap="selectDate">
-    <view class="icon-right"></view>
-  </view>
-</view>
-
-<!--人数-->
-<view class="line-item">
-  <view class="icon-person"></view>
-  <view class="line-text">
-    人数:
-    <text class="content">{{order.people_no}}</text>
-  </view>
-  <view class="icon-wrapper" bindtap="addPerson">
-    <view class="icon-add {{order.menu.menu_price[order.menu.menu_price.length-1].people==order.people_no?'disable':''}}"></view>
   </view>
 
-  <view class="icon-wrapper" bindtap="descPerson">
-    <view class="icon-dec {{order.menu.menu_price[0].people==order.people_no?'disable':''}}"></view>
+  <!--日期-->
+  <view class="line-item">
+    <view class="icon-date"></view>
+    <view class="line-text">
+      日期:
+      <text class="content">{{order.date.year}} / {{order.date.month}} / {{order.date.day}}</text>
+      <text class="content">{{order.time}}</text>
+    </view>
+    <view class="icon-wrapper" bindtap="selectDate">
+      <view class="icon-right"></view>
+    </view>
   </view>
 
+  <!--人数-->
+  <view class="line-item">
+    <view class="icon-person"></view>
+    <view class="line-text">
+      人数:
+      <text class="content">{{order.people_no}}</text>
+    </view>
+    <view class="icon-wrapper" bindtap="addPerson">
+      <view class="icon-add {{order.menu.menu_price[order.menu.menu_price.length-1].people==order.people_no?'disable':''}}"></view>
+    </view>
 
-</view>
+    <view class="icon-wrapper" bindtap="descPerson">
+      <view class="icon-dec {{order.menu.menu_price[0].people==order.people_no?'disable':''}}"></view>
+    </view>
 
-<view class="line-item price-wrapper">
-  <view class="price">
-    总价:
+
   </view>
-  <text class="pay">{{order.menu_price}}</text>
-</view>
 
-<view class="note">备注</view>
-<textarea class="note-content" placeholder="（如果您有其他的要求，可以通过备注告知私厨，最多50字符）" placeholder-style="color: rgba(172, 172, 172, 1);" bindblur="setBookingNotice" />
+  <view class="line-item price-wrapper">
+    <view class="price">
+      总价:
+    </view>
+    <text class="pay">{{order.menu_price}}</text>
+  </view>
 
-<view class="footer" bindtap="booking">提交订单</view>
+  <view class="note">备注</view>
+  <textarea class="note-content" placeholder="（如果您有其他的要求，可以通过备注告知私厨，最多50字符）" placeholder-style="color: rgba(172, 172, 172, 1);" bindblur="setBookingNotice" />
+
+  <button class="footer" formType="submit" >提交订单</button>
+
+</form>

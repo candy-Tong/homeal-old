@@ -2,6 +2,18 @@ const openIdUrl = require('./config').openIdUrl;
 
 App({
   onLaunch: function () {
+    // 测试专用
+    wx.login({
+      success: function (data) {
+        console.log(data)
+      },
+      fail: function (err) {
+        console.log('wx.login 接口调用失败，将无法正常使用开放接口等服务', err)
+        callback(err)
+      }
+    })
+
+
     console.log('App Launch');
 
     Date.prototype.Format = function (fmt) { //author: meizz 

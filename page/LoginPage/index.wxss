@@ -1,7 +1,7 @@
 /* page/LoginPage/index.wxss */
 
 .Login-page {
-  background-image: url("http://123.207.244.80/homeal/login/Group.png");
+  background-image: url("http://119.29.162.17/homeal/login/Group.png");
   background-size: 100%;
   background-repeat: no-repeat;
   width: 100%;

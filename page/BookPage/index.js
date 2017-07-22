@@ -23,14 +23,67 @@ Page({
   },
 
   // 提交订单
-  booking() {
+  booking(e) {
+    var formId=e.detail.formId
+    console.log(e.detail.formId)
+    console.log(formId)
+    // data = JSON.stringify()
+    //发送模板消息
+    wx.request({
+      url: 'https://api.weixin.qq.com/cgi-bin/message/wxopen/template/send?access_token=J1IqD6fFW0vfiTh_Q7da9rBvQAyaJdV6QnSAkp30Pe5fOXY7kEkibntKpFABGKr8hTAcKQAEiMzpG9DoXXRz7vsVVMgFPzS4v63B9TDhyJ7t9IEcB9RyLFLq9c2nnR0XRROjACALLI',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method: "POST",
+      dataType: "json",
+      data: JSON.stringify({
+        "touser": "oGpYI0Z-CQF0rorhbRk_uhmH00ZA",
+        "template_id": "p06BBRSuO12Hy60LtoJMMmVgl7m8J1PdfMcwpEVMV2E",
+        "form_id": formId,
+        "data": {
+          "keyword1": {
+            "value": "测试订单",
+            "color": "#173177"
+          },
+          "keyword2": {
+            "value": "糖糖的店",
+            "color": "#173177"
+          },
+          "keyword3": {
+            "value": " 广州市天河区天河路208号",
+            "color": "#173177"
+          },
+          "keyword4": {
+            "value": "2015年01月05日 12:30",
+            "color": "#173177"
+          },
+          "keyword5": {
+            "value": "13106986324",
+            "color": "#173177"
+          },
+          "keyword6": {
+            "value": "不加糖",
+            "color": "#173177"
+          },
+          "keyword7": {
+            "value": "未接单",
+            "color": "#173177"
+          }
+        }
+      }),
+      success(res) {
+        console.log(res)
+      }
+    })
+
+
     let _this = this
     // 获取token 和 phone
     try {
       var token = wx.getStorageSync('token')
       var phone = wx.getStorageSync('phone')
-      console.log(token)
-      console.log(phone)
+      // console.log(token)
+      // console.log(phone)
       console.log(Boolean(token) + Boolean(phone))
       if (!token || !phone) {
 
@@ -45,7 +98,7 @@ Page({
       // Do something when catch error
       console.log(e)
     }
-    
+
     // 新增订单
     let chef_id = _this.data.chef_id
     let menus = []
@@ -86,6 +139,9 @@ Page({
           });
           return false
         }
+
+
+
         wx.navigateBack({
           delta: 1
         })
